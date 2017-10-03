@@ -1,0 +1,3 @@
+[submodule "MidiSharp"]
+	path = MidiSharp
+	url = https://github.com/stephentoub/MidiSharp
