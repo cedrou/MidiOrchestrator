@@ -134,15 +134,15 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MidiSharp\MidiSharp\MidiSharp.csproj">
-      <Project>{8794a9d6-426c-4c77-8baf-b603373cc4ac}</Project>
-      <Name>MidiSharp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <SDKReference Include="Microsoft.Midi.GmDls, Version=10.0.15063.0">
       <Name>Microsoft General MIDI DLS for Universal Windows Apps</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MidiSharp\MidiSharp\MidiSharp.csproj">
+      <Project>{8794a9d6-426c-4c77-8baf-b603373cc4ac}</Project>
+      <Name>MidiSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MidiOrchestrator", "MidiOrchestrator\MidiOrchestrator.csproj", "{3123A0DA-CEC2-402D-9169-745A9EF1B0FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MidiSharp", "..\MidiSharp\MidiSharp\MidiSharp.csproj", "{8794A9D6-426C-4C77-8BAF-B603373CC4AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MidiSharp", "MidiSharp\MidiSharp\MidiSharp.csproj", "{8794A9D6-426C-4C77-8BAF-B603373CC4AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
