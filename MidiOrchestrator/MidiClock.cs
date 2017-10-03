@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MidiSharp;
+using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Windows.System.Threading;
 
 namespace MidiOrchestrator
@@ -11,34 +13,16 @@ namespace MidiOrchestrator
 
 
         // Tempo in beat per minute. Default 120 bpm
-        public UInt32 Tempo {
-            get { return _Tempo; }
-            set { _Tempo = value; UpdateInternals(); }
-        }
-        UInt32 _Tempo = 120;
+        public UInt32 Tempo { get; private set; }
+        UInt32 nextTempo = 0;
+        UInt32 nextQuarterDurationInUs = 0;
 
 
         // Time signature. Default 4/4
-        public Tuple<UInt32, UInt32> TimeSignature {
-            get { return _TimeSignature; }
-            set { _TimeSignature = value; UpdateInternals(); }
-        }
-        Tuple<UInt32, UInt32> _TimeSignature = new Tuple<UInt32, UInt32>(4, 4);
+        public Tuple<UInt32, UInt32> TimeSignature { get; private set; }
+        Tuple<UInt32, UInt32> nextTimeSignature = null;
 
-
-        // Number of ticks per quarter note. Default 96
-        public UInt32 TicksPerQuarter {
-            get { return _TicksPerQuarter; }
-            set { _TicksPerQuarter = value; UpdateInternals(); }
-        }
-        UInt32 _TicksPerQuarter = 96;
-
-
-        public UInt32 Ticks {
-            get { return _Ticks; }
-            private set { _Ticks = value; }
-        }
-        UInt32 _Ticks = 0;
+        public UInt32 Ticks { get; private set; }
 
         public UInt32 Measure { get => (Ticks + ticksPerMeasure) / ticksPerMeasure; }
 
@@ -49,32 +33,51 @@ namespace MidiOrchestrator
         private UInt32 beatsPerQuarter;
         private Single quartersPerMeasure;
 
+        private UInt32 ticksPerQuarter;
         private UInt32 ticksPerMeasure;
         private UInt32 ticksPerBeat;
 
-        private Double tickDurationInMs;
+        private UInt32 tickDurationInMs;
 
-        private ThreadPoolTimer timer;
+        //private ThreadPoolTimer timer;
 
 
-        public MidiClock()
+        public MidiClock(MidiSequence sequence)
         {
+            Tempo = 120;
+            TimeSignature = new Tuple<uint, uint>(4, 4);
+            Ticks = 0;
+
+            if (sequence.DivisionType == DivisionType.TicksPerBeat)
+                ticksPerQuarter = (UInt32)sequence.TicksPerBeatOrFrame;
+            else
+                ticksPerQuarter = 96;
+
             UpdateInternals();
         }
 
         private void UpdateInternals()
         {
-            beatsPerMeasure = _TimeSignature.Item1;
-            beatsPerQuarter = _TimeSignature.Item2 / 4;
+            beatsPerMeasure = TimeSignature.Item1;
+            beatsPerQuarter = TimeSignature.Item2 / 4;
             quartersPerMeasure = (Single)beatsPerMeasure / beatsPerQuarter;
             // 4/4 : 4 beats per measure, 4/4=1 beat per quarter -> 4/1=4 quarters per measure
             // 6/8 : 6 beats per measure, 8/4=2 beats per quarter -> 6/2=3 quarters per measure
             // 2/2 : 2 beats per measure, 2/4=0.5 beat per quarter -> 2/0.5=4 quarters per measure
 
-            ticksPerMeasure = (UInt32)(_TicksPerQuarter * quartersPerMeasure);
+            ticksPerMeasure = (UInt32)(ticksPerQuarter * quartersPerMeasure);
             ticksPerBeat = ticksPerMeasure / beatsPerMeasure;
 
-            tickDurationInMs = 60000.0 / (_Tempo * _TicksPerQuarter);
+            //var newTickDurationInMs = Math.Max(1, 60000 / (Tempo * ticksPerQuarter));
+            var newTickDurationInMs = Math.Max(1, nextQuarterDurationInUs /*us/q*/ / (1000 * ticksPerQuarter /*tk/q*/));
+            if (newTickDurationInMs != tickDurationInMs)
+            {
+                var bRestart = isRunning;
+
+                Pause();
+                tickDurationInMs = newTickDurationInMs;
+                if (bRestart) Start();
+            }
         }
 
         public void Seek(UInt32 measure, UInt32 beatInMeasure)
@@ -82,24 +85,92 @@ namespace MidiOrchestrator
             Ticks = measure * ticksPerMeasure + beatInMeasure * ticksPerBeat;
         }
 
+        public void SetTempo(UInt32 quarterDurationInUs)
+        {
+            nextQuarterDurationInUs = quarterDurationInUs;
+        }
+
+        public void SetTimeSignature(UInt32 num, UInt32 den)
+        {
+            nextTimeSignature = new Tuple<uint, uint>(num, den);
+        }
+
         public void Start()
         {
-            timer = ThreadPoolTimer.CreatePeriodicTimer(t => {
-                Tick?.Invoke(this, EventArgs.Empty);
+            isRunning = true;
+            //timer = ThreadPoolTimer.CreatePeriodicTimer(t => {
+            //    Ticks++;
+            //    Tick?.Invoke(this, EventArgs.Empty);
+
+            //    bool doUpdateInternals = false;
+            //    if (nextTempo > 0)
+            //    {
+            //        Tempo = nextTempo;
+            //        nextTempo = 0;
+            //        doUpdateInternals = true;
+            //    }
+            //    if (nextTimeSignature != null)
+            //    {
+            //        TimeSignature = nextTimeSignature;
+            //        nextTimeSignature = null;
+            //        doUpdateInternals = true;
+            //    }
+            //    if (doUpdateInternals)
+            //        UpdateInternals();
+
+            //}, TimeSpan.FromMilliseconds(tickDurationInMs), t => {
+            //    Debug.Write("Destroyed");
+            //});
+            var _ = ClockLoopAsync();
+        }
+
+        bool isRunning = false;
+
+        async Task ClockLoopAsync()
+        {
+            var sw = Stopwatch.StartNew();
+
+            while (isRunning)
+            {
+                var entryTime = sw.ElapsedMilliseconds;
+
                 Ticks++;
-            }, TimeSpan.FromMilliseconds(tickDurationInMs), t => {
-                Debug.Write("Destroyed");
-            });
+
+                Tick?.Invoke(this, EventArgs.Empty);
+
+                bool doUpdateInternals = false;
+                if (nextTempo > 0)
+                {
+                    Tempo = nextTempo;
+                    nextTempo = 0;
+                    doUpdateInternals = true;
+                }
+                if (nextTimeSignature != null)
+                {
+                    TimeSignature = nextTimeSignature;
+                    nextTimeSignature = null;
+                    doUpdateInternals = true;
+                }
+                if (doUpdateInternals)
+                    UpdateInternals();
+
+                while (sw.ElapsedMilliseconds < entryTime + tickDurationInMs)
+                    await Task.Yield();
+            }
         }
 
         public void Pause()
         {
-            timer.Cancel();
+            isRunning = false;
+            //timer?.Cancel();
+            //timer = null;
         }
 
         public void Stop()
         {
-            timer.Cancel();
+            isRunning = false;
+            //timer?.Cancel();
+            //timer = null;
             Ticks = 0;
         }
     }

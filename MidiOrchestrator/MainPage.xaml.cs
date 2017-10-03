@@ -40,6 +40,17 @@ namespace MidiOrchestrator
         MidiClock clock;
         IEnumerable<TrackRunner> tracks;
 
+        static int GCD(int[] numbers)
+        {
+            return numbers.Aggregate(GCD);
+        }
+
+        static int GCD(int a, int b)
+        {
+            return b == 0 ? a : GCD(b, a % b);
+        }
+
+
         private async void Button_Click(object _1, RoutedEventArgs _2)
         {
             // Find all output MIDI devices
@@ -82,7 +93,8 @@ namespace MidiOrchestrator
                 }
             } catch (Exception exc) { Debug.WriteLine($"Failed to read MIDI sequence: {exc.Message}"); return; }
 
-            clock = new MidiClock();
+
+            clock = new MidiClock(sequence);
 
             tracks = sequence.Select(t => new TrackRunner(sequence, t, clock, midiOutPort) ).ToList();
             //new {
@@ -105,6 +117,14 @@ namespace MidiOrchestrator
             //        return null;
             //    })
             //}
+
+            var allTimes = new List<Int64>();
+            foreach (var t in sequence)
+            {
+                allTimes.AddRange(t.Events.Select(p => p.DeltaTime));
+            }
+            var distinctTimes = allTimes.Distinct().OrderBy(t => t);
+
 
             clock.Start();
             var full = sequence.ToString();
