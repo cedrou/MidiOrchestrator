@@ -100,6 +100,9 @@
     </Compile>
     <Compile Include="MidiClock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrackControl.xaml.cs">
+      <DependentUpon>TrackControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TrackRunner.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +129,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TrackControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

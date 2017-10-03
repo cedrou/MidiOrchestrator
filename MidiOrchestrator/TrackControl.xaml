@@ -1,0 +1,24 @@
+﻿<UserControl
+    x:Class="MidiOrchestrator.TrackControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MidiOrchestrator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="400"
+    d:DesignWidth="55">
+
+    <Grid >
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Button x:Name="btnInfo" Content="1" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+            <Slider x:Name="densityMeter" Orientation="Vertical" Height="93" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Button x:Name="btnSolo" Content="Solo" HorizontalAlignment="Center"/>
+            <Button x:Name="btnMute" Content="Mute" HorizontalAlignment="Center"/>
+            <Button x:Name="btnRec" Content="Rec" HorizontalAlignment="Center"/>
+            <Slider x:Name="volumeSlider" Orientation="Vertical" Height="93" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <TextBlock x:Name="txtName" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

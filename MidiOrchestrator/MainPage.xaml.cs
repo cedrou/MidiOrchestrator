@@ -31,47 +31,38 @@ namespace MidiOrchestrator
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        MidiSynthesizer midiSynth;
+        MidiSequence sequence;
+        MidiClock clock;
+        IEnumerable<TrackRunner> tracks;
+        string sequenceDump;
+
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        MidiSequence sequence;
-        MidiClock clock;
-        IEnumerable<TrackRunner> tracks;
-
-        static int GCD(int[] numbers)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            return numbers.Aggregate(GCD);
+            base.OnNavigatedTo(e);
+
+            midiSynth = await MidiSynthesizer.CreateAsync();
         }
 
-        static int GCD(int a, int b)
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            return b == 0 ? a : GCD(b, a % b);
+            base.OnNavigatingFrom(e);
+
+            clock.Stop();
+
+            midiSynth.Dispose();
+            midiSynth = null;
         }
 
 
-        private async void Button_Click(object _1, RoutedEventArgs _2)
+        private async void btnLoad_Click(object sender, RoutedEventArgs e)
         {
-            // Find all output MIDI devices
-            var midiOutportQueryString = MidiOutPort.GetDeviceSelector();
-            var midiOutputDevices = await DeviceInformation.FindAllAsync(midiOutportQueryString);
-            var devInfo = midiOutputDevices.FirstOrDefault();
-            if (devInfo == null)
-            { Debug.WriteLine("No MIDI devices found!"); return; }
-
-            var midiOutPort = await MidiOutPort.FromIdAsync(devInfo.Id);
-            if (midiOutPort == null)
-            { Debug.WriteLine("Unable to create MidiOutPort"); return; }
-
-            byte channel = 0;
-            byte note = 60;
-            byte velocity = 127;
-            var midiMessageToSend = new MidiNoteOnMessage(channel, note, velocity);
-
-            //midiOutPort.SendMessage(midiMessageToSend);
-
-
+            // Select the file
             var picker = new FileOpenPicker() {
                 ViewMode = PickerViewMode.Thumbnail,
                 SuggestedStartLocation = PickerLocationId.PicturesLibrary,
@@ -84,6 +75,7 @@ namespace MidiOrchestrator
 
             //TODO: Add picked file to MRU
 
+            // Open the file
             sequence = null;
             try
             {
@@ -93,41 +85,29 @@ namespace MidiOrchestrator
                 }
             } catch (Exception exc) { Debug.WriteLine($"Failed to read MIDI sequence: {exc.Message}"); return; }
 
+            sequenceDump = sequence.ToString();
 
+            // Create a new clock 
             clock = new MidiClock(sequence);
 
-            tracks = sequence.Select(t => new TrackRunner(sequence, t, clock, midiOutPort) ).ToList();
-            //new {
-            //    Name = t.OfType<SequenceTrackNameTextMetaMidiEvent>().Select(e => e.Text).FirstOrDefault(),
-            //    Messages = t.Select<MidiEvent, IMidiMessage>(e => {
-            //        switch (e.GetType().Name)
-            //        {
-            //        case nameof(OnNoteVoiceMidiEvent):
-            //            {
-            //                var ev = e as OnNoteVoiceMidiEvent;
-            //                return new MidiNoteOnMessage(ev.Channel, ev.Note, ev.Velocity);
-            //            }
-            //        case nameof(OffNoteVoiceMidiEvent):
-            //            {
-            //                var ev = e as OffNoteVoiceMidiEvent;
-            //                return new MidiNoteOffMessage(ev.Channel, ev.Note, ev.Velocity);
-            //            }
-            //        }
+            // Create the track list
+            tracks = sequence.Select(t => new TrackRunner(sequence, t, clock, midiSynth)).ToList();
+        }
 
-            //        return null;
-            //    })
-            //}
-
-            var allTimes = new List<Int64>();
-            foreach (var t in sequence)
-            {
-                allTimes.AddRange(t.Events.Select(p => p.DeltaTime));
-            }
-            var distinctTimes = allTimes.Distinct().OrderBy(t => t);
-
-
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
             clock.Start();
-            var full = sequence.ToString();
+        }
+
+        private void btnPause_Click(object sender, RoutedEventArgs e)
+        {
+            midiSynth.SendMessage(new MidiStopMessage());
+            clock.Pause();
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            clock.Stop();
         }
     }
 }
