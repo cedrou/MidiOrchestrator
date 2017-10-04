@@ -25,6 +25,7 @@ namespace MidiOrchestrator
 
         public UInt32 BeatInMeasure { get => 1 + (Ticks % ticksPerMeasure) / ticksPerBeat; }
 
+        public IEnumerable<TrackRunner> VoiceTracks { get => tracks.Where(t => t.IsVoiceTrack); }
 
         // Set by MIDI file or user
         private UInt32 ticksPerQuarter;
@@ -49,14 +50,12 @@ namespace MidiOrchestrator
 
         private List<TrackRunner> tracks;
         private List<UInt32> deltaTicks;
-        private IEnumerable<TrackControl> trackControls;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MidiSequencer(MidiSynthesizer midiSynth, IEnumerable<TrackControl> trackControls)
+        public MidiSequencer(MidiSynthesizer midiSynth)
         {
             this.midiSynth = midiSynth;
-            this.trackControls = trackControls;
 
             µsPerQuarter = 500_000;
             beatsPerMeasure = 4;
@@ -111,7 +110,7 @@ namespace MidiOrchestrator
 
             for (var trackIndex = 0; trackIndex < sequence.Tracks.Count; trackIndex++)
             {
-                tracks.Add(new TrackRunner(sequence.Tracks[trackIndex], this, trackControls.ElementAtOrDefault(trackIndex)));
+                tracks.Add(new TrackRunner(sequence.Tracks[trackIndex], this));
                 deltaTicks.Add((UInt32)sequence.Tracks[trackIndex].Events[0].DeltaTime);
             }
 
@@ -158,19 +157,26 @@ namespace MidiOrchestrator
             next_beatsPerQuarter = den / 4;
         }
 
+
+        private Task loopTask = null;
         public void Start()
         {
-            var _ = ClockLoopAsync();
+            loopTask = ClockLoopAsync();
         }
 
-        public void Pause()
+        public async Task PauseAsync()
         {
             isPlaying = false;
+            await loopTask;
+            foreach (var t in VoiceTracks)
+            {
+                t.Stop();
+            }
         }
 
-        public void Stop()
+        public async Task StopAsync()
         {
-            isPlaying = false;
+            await PauseAsync();
             Ticks = 0;
         }
 

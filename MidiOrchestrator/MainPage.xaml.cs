@@ -46,15 +46,15 @@ namespace MidiOrchestrator
             midiSynth = await MidiSynthesizer.CreateAsync();
 
             // Create a new clock 
-            Sequencer = new MidiSequencer(midiSynth, trackCollection.Children.Cast<TrackControl>());
+            Sequencer = new MidiSequencer(midiSynth);
             this.DataContext = Sequencer;
         }
 
-        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        protected override async void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             base.OnNavigatingFrom(e);
 
-            Sequencer.Stop();
+            await Sequencer.StopAsync();
             Sequencer = null;
             this.DataContext = Sequencer;
 
@@ -80,6 +80,11 @@ namespace MidiOrchestrator
 
             await Sequencer.OpenAsync(file);
 
+            foreach (var t in Sequencer.VoiceTracks)
+            {
+                (trackCollection.Children[t.Channel] as FrameworkElement).DataContext = t;
+            }
+
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
@@ -87,14 +92,14 @@ namespace MidiOrchestrator
             Sequencer.Start();
         }
 
-        private void btnPause_Click(object sender, RoutedEventArgs e)
+        private async void btnPause_Click(object sender, RoutedEventArgs e)
         {
-            Sequencer.Pause();
+            await Sequencer.PauseAsync();
         }
 
-        private void btnStop_Click(object sender, RoutedEventArgs e)
+        private async void btnStop_Click(object sender, RoutedEventArgs e)
         {
-            Sequencer.Stop();
+            await Sequencer.StopAsync();
         }
     }
 }
