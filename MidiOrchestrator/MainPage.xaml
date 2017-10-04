@@ -10,33 +10,34 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
             <Button x:Name="btnLoad" Content="Load..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="btnLoad_Click"/>
-        <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
-            <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnStop_Click"/>
-            <Button x:Name="btnStart" Content="Play" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnStart_Click"/>
-            <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnPause_Click"/>
-            <TextBlock TextWrapping="Wrap" Text="Song Position" Width="72" TextAlignment="Center" Margin="16,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Slider Width="265"/>
-            <TextBlock TextWrapping="Wrap" Text="Tempo" Width="72" TextAlignment="Center" Margin="16,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox x:Name="txtTempo" TextWrapping="Wrap" Text="60" VerticalAlignment="Center" Width="11"/>
-        </StackPanel>
-        <StackPanel x:Name="trackCollection" Margin="10,0,0,0" Orientation="Horizontal">
             
-            <local:TrackControl x:Name="track1" />
-            <local:TrackControl x:Name="track2" />
-            <local:TrackControl x:Name="track3" />
-            <local:TrackControl x:Name="track4" />
-            <local:TrackControl x:Name="track5" />
-            <local:TrackControl x:Name="track6" />
-            <local:TrackControl x:Name="track7" />
-            <local:TrackControl x:Name="track8" />
-            <local:TrackControl x:Name="track9" />
-            <local:TrackControl x:Name="track10" />
-            <local:TrackControl x:Name="track11" />
-            <local:TrackControl x:Name="track12" />
-            <local:TrackControl x:Name="track13" />
-            <local:TrackControl x:Name="track14" />
-            <local:TrackControl x:Name="track15" />
-            <local:TrackControl x:Name="track16" />
+            <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
+                <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnStop_Click"/>
+                <Button x:Name="btnStart" Content="Play" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnStart_Click"/>
+                <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnPause_Click"/>
+                <TextBlock TextWrapping="Wrap" Text="Song Position" Width="72" TextAlignment="Center" Margin="16,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Slider Width="265"/>
+                <TextBlock TextWrapping="Wrap" Text="Tempo" Width="72" TextAlignment="Center" Margin="16,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtTempo" TextWrapping="Wrap" Text="{Binding Tempo, Mode=TwoWay}" VerticalAlignment="Center" Width="11"/>
+            </StackPanel>
+
+            <StackPanel x:Name="trackCollection" Margin="10,0,0,0" Orientation="Horizontal">
+                <local:TrackControl x:Name="track1" />
+                <local:TrackControl x:Name="track2" />
+                <local:TrackControl x:Name="track3" />
+                <local:TrackControl x:Name="track4" />
+                <local:TrackControl x:Name="track5" />
+                <local:TrackControl x:Name="track6" />
+                <local:TrackControl x:Name="track7" />
+                <local:TrackControl x:Name="track8" />
+                <local:TrackControl x:Name="track9" />
+                <local:TrackControl x:Name="track10" />
+                <local:TrackControl x:Name="track11" />
+                <local:TrackControl x:Name="track12" />
+                <local:TrackControl x:Name="track13" />
+                <local:TrackControl x:Name="track14" />
+                <local:TrackControl x:Name="track15" />
+                <local:TrackControl x:Name="track16" />
             </StackPanel>
         </StackPanel>
 

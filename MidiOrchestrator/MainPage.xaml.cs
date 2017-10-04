@@ -32,10 +32,7 @@ namespace MidiOrchestrator
     public sealed partial class MainPage : Page
     {
         MidiSynthesizer midiSynth;
-        MidiSequence sequence;
-        MidiClock clock;
-        IEnumerable<TrackRunner> tracks;
-        string sequenceDump;
+        public MidiSequencer Sequencer { get; private set; }
 
         public MainPage()
         {
@@ -47,13 +44,19 @@ namespace MidiOrchestrator
             base.OnNavigatedTo(e);
 
             midiSynth = await MidiSynthesizer.CreateAsync();
+
+            // Create a new clock 
+            Sequencer = new MidiSequencer(midiSynth, trackCollection.Children.Cast<TrackControl>());
+            this.DataContext = Sequencer;
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             base.OnNavigatingFrom(e);
 
-            clock.Stop();
+            Sequencer.Stop();
+            Sequencer = null;
+            this.DataContext = Sequencer;
 
             midiSynth.Dispose();
             midiSynth = null;
@@ -75,39 +78,23 @@ namespace MidiOrchestrator
 
             //TODO: Add picked file to MRU
 
-            // Open the file
-            sequence = null;
-            try
-            {
-                using (var inputStream = await file.OpenReadAsync())
-                {
-                    sequence = MidiSequence.Open(inputStream.AsStreamForRead());
-                }
-            } catch (Exception exc) { Debug.WriteLine($"Failed to read MIDI sequence: {exc.Message}"); return; }
+            await Sequencer.OpenAsync(file);
 
-            sequenceDump = sequence.ToString();
-
-            // Create a new clock 
-            clock = new MidiClock(sequence);
-
-            // Create the track list
-            tracks = sequence.Select(t => new TrackRunner(sequence, t, clock, midiSynth)).ToList();
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            clock.Start();
+            Sequencer.Start();
         }
 
         private void btnPause_Click(object sender, RoutedEventArgs e)
         {
-            midiSynth.SendMessage(new MidiStopMessage());
-            clock.Pause();
+            Sequencer.Pause();
         }
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
-            clock.Stop();
+            Sequencer.Stop();
         }
     }
 }

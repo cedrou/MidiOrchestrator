@@ -1,177 +1,244 @@
 ﻿using MidiSharp;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
+
 using System.Threading.Tasks;
+using Windows.Devices.Midi;
+using Windows.Storage;
 using Windows.System.Threading;
 
 namespace MidiOrchestrator
 {
-    class MidiClock
+    public class MidiSequencer : INotifyPropertyChanged
     {
-        public delegate void TickHandler(MidiClock m, EventArgs e);
-        public event TickHandler Tick;
+        public UInt32 Tempo { get => 60_000_000 * beatsPerQuarter / µsPerQuarter; }
 
-
-        // Tempo in beat per minute. Default 120 bpm
-        public UInt32 Tempo { get; private set; }
-        UInt32 nextTempo = 0;
-        UInt32 nextQuarterDurationInUs = 0;
-
-
-        // Time signature. Default 4/4
-        public Tuple<UInt32, UInt32> TimeSignature { get; private set; }
-        Tuple<UInt32, UInt32> nextTimeSignature = null;
+        public Tuple<UInt32, UInt32> TimeSignature { get => new Tuple<UInt32, UInt32>(beatsPerMeasure, beatsPerQuarter * 4); }
 
         public UInt32 Ticks { get; private set; }
 
-        public UInt32 Measure { get => (Ticks + ticksPerMeasure) / ticksPerMeasure; }
+        public UInt32 Measure { get => 1 + Ticks / ticksPerMeasure; }
 
-        public UInt32 BeatInMeasure { get => (((Ticks + ticksPerMeasure) % ticksPerMeasure) + ticksPerBeat) / ticksPerBeat; }
+        public UInt32 BeatInMeasure { get => 1 + (Ticks % ticksPerMeasure) / ticksPerBeat; }
 
 
+        // Set by MIDI file or user
+        private UInt32 ticksPerQuarter;
+        private UInt32 µsPerQuarter;
         private UInt32 beatsPerMeasure;
         private UInt32 beatsPerQuarter;
-        private Single quartersPerMeasure;
 
-        private UInt32 ticksPerQuarter;
+        private UInt32 next_µsPerQuarter;
+        private UInt32 next_beatsPerMeasure;
+        private UInt32 next_beatsPerQuarter;
+
+        // Internal cached values
         private UInt32 ticksPerMeasure;
         private UInt32 ticksPerBeat;
 
-        private UInt32 tickDurationInMs;
+        private UInt32 µsPerTick;
 
-        //private ThreadPoolTimer timer;
+        private MidiSynthesizer midiSynth;
+        private MidiSequence sequence;
+        private string sequenceDump;
+        private bool isPlaying = false;
 
+        private List<TrackRunner> tracks;
+        private List<UInt32> deltaTicks;
+        private IEnumerable<TrackControl> trackControls;
 
-        public MidiClock(MidiSequence sequence)
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public MidiSequencer(MidiSynthesizer midiSynth, IEnumerable<TrackControl> trackControls)
         {
-            Tempo = 120;
-            TimeSignature = new Tuple<uint, uint>(4, 4);
-            Ticks = 0;
+            this.midiSynth = midiSynth;
+            this.trackControls = trackControls;
 
-            if (sequence.DivisionType == DivisionType.TicksPerBeat)
-                ticksPerQuarter = (UInt32)sequence.TicksPerBeatOrFrame;
-            else
-                ticksPerQuarter = 96;
+            µsPerQuarter = 500_000;
+            beatsPerMeasure = 4;
+            beatsPerQuarter = 1;
+            ticksPerQuarter = 96;
+
+            Ticks = 0;
 
             UpdateInternals();
         }
 
+        static IEnumerable<int> Zeros(IList<UInt32> list)
+        {
+            var zeros = new List<int>();
+            for (var i = 0; i < list.Count; i++)
+            {
+                if (list[i] == 0)
+                    zeros.Add(i);
+            }
+            return zeros;
+        }
+
+        public async Task OpenAsync(StorageFile file)
+        {
+            sequence = null;
+            try
+            {
+                using (var inputStream = await file.OpenReadAsync())
+                {
+                    sequence = MidiSequence.Open(inputStream.AsStreamForRead());
+                }
+            } catch (Exception exc) { Debug.WriteLine($"Failed to read MIDI sequence: {exc.Message}"); return; }
+
+            sequenceDump = sequence.ToString();
+
+            µsPerQuarter = 500_000;
+            beatsPerMeasure = 4;
+            beatsPerQuarter = 1;
+            ticksPerQuarter = 96;
+
+            Ticks = 0;
+
+            if (sequence.DivisionType == DivisionType.TicksPerBeat)
+                ticksPerQuarter = (UInt32)sequence.TicksPerBeatOrFrame;
+
+            UpdateInternals();
+
+
+            // Create the track list
+            tracks = new List<TrackRunner>();
+            deltaTicks = new List<UInt32>();
+
+            for (var trackIndex = 0; trackIndex < sequence.Tracks.Count; trackIndex++)
+            {
+                tracks.Add(new TrackRunner(sequence.Tracks[trackIndex], this, trackControls.ElementAtOrDefault(trackIndex)));
+                deltaTicks.Add((UInt32)sequence.Tracks[trackIndex].Events[0].DeltaTime);
+            }
+
+            foreach (var i in Zeros(deltaTicks))
+            {
+                deltaTicks[i] = tracks[i].Run();
+            }
+        }
+
         private void UpdateInternals()
         {
-            beatsPerMeasure = TimeSignature.Item1;
-            beatsPerQuarter = TimeSignature.Item2 / 4;
-            quartersPerMeasure = (Single)beatsPerMeasure / beatsPerQuarter;
-            // 4/4 : 4 beats per measure, 4/4=1 beat per quarter -> 4/1=4 quarters per measure
-            // 6/8 : 6 beats per measure, 8/4=2 beats per quarter -> 6/2=3 quarters per measure
-            // 2/2 : 2 beats per measure, 2/4=0.5 beat per quarter -> 2/0.5=4 quarters per measure
+            var quartersPerMeasure = (Single)beatsPerMeasure / beatsPerQuarter;
 
             ticksPerMeasure = (UInt32)(ticksPerQuarter * quartersPerMeasure);
             ticksPerBeat = ticksPerMeasure / beatsPerMeasure;
 
-            //var newTickDurationInMs = Math.Max(1, 60000 / (Tempo * ticksPerQuarter));
-            var newTickDurationInMs = Math.Max(1, nextQuarterDurationInUs /*us/q*/ / (1000 * ticksPerQuarter /*tk/q*/));
-            if (newTickDurationInMs != tickDurationInMs)
-            {
-                var bRestart = isRunning;
+            µsPerTick = µsPerQuarter / ticksPerQuarter;
 
-                Pause();
-                tickDurationInMs = newTickDurationInMs;
-                if (bRestart) Start();
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs("Tempo"));
+                PropertyChanged(this, new PropertyChangedEventArgs("TimeSignature"));
             }
         }
 
         public void Seek(UInt32 measure, UInt32 beatInMeasure)
         {
-            Ticks = measure * ticksPerMeasure + beatInMeasure * ticksPerBeat;
+            Ticks = (measure-1) * ticksPerMeasure + (beatInMeasure-1) * ticksPerBeat;
         }
 
-        public void SetTempo(UInt32 quarterDurationInUs)
+        public void SetTempo(UInt32 bpm)
         {
-            nextQuarterDurationInUs = quarterDurationInUs;
+            next_µsPerQuarter = 60_000_000 * beatsPerQuarter / bpm;
+        }
+
+        public void SetQuarterDuration(UInt32 µsPerQuarter)
+        {
+            next_µsPerQuarter = µsPerQuarter;
         }
 
         public void SetTimeSignature(UInt32 num, UInt32 den)
         {
-            nextTimeSignature = new Tuple<uint, uint>(num, den);
+            next_beatsPerMeasure = num;
+            next_beatsPerQuarter = den / 4;
         }
 
         public void Start()
         {
-            isRunning = true;
-            //timer = ThreadPoolTimer.CreatePeriodicTimer(t => {
-            //    Ticks++;
-            //    Tick?.Invoke(this, EventArgs.Empty);
-
-            //    bool doUpdateInternals = false;
-            //    if (nextTempo > 0)
-            //    {
-            //        Tempo = nextTempo;
-            //        nextTempo = 0;
-            //        doUpdateInternals = true;
-            //    }
-            //    if (nextTimeSignature != null)
-            //    {
-            //        TimeSignature = nextTimeSignature;
-            //        nextTimeSignature = null;
-            //        doUpdateInternals = true;
-            //    }
-            //    if (doUpdateInternals)
-            //        UpdateInternals();
-
-            //}, TimeSpan.FromMilliseconds(tickDurationInMs), t => {
-            //    Debug.Write("Destroyed");
-            //});
             var _ = ClockLoopAsync();
         }
 
-        bool isRunning = false;
+        public void Pause()
+        {
+            isPlaying = false;
+        }
+
+        public void Stop()
+        {
+            isPlaying = false;
+            Ticks = 0;
+        }
 
         async Task ClockLoopAsync()
         {
+            isPlaying = true;
+
             var sw = Stopwatch.StartNew();
 
-            while (isRunning)
+            var lastTickTime = sw.ElapsedMilliseconds;
+
+            while (isPlaying)
             {
-                var entryTime = sw.ElapsedMilliseconds;
+                var minDeltaTick = deltaTicks.Min();
+                Debug.Assert(minDeltaTick > 0);
 
-                Ticks++;
+                var msToNextEvent = minDeltaTick * µsPerTick / 1000 - (sw.ElapsedMilliseconds - lastTickTime);
+                if (msToNextEvent > 0)
+                    await Task.Delay((Int32)msToNextEvent);
 
-                Tick?.Invoke(this, EventArgs.Empty);
+                lastTickTime = sw.ElapsedMilliseconds;
+
+                Ticks += minDeltaTick;
+
+                for (var i = 0; i < deltaTicks.Count; i++)
+                {
+                    if (deltaTicks[i] < UInt32.MaxValue)
+                        deltaTicks[i] -= minDeltaTick;
+                }
+
+                foreach (var i in Zeros(deltaTicks))
+                {
+                    deltaTicks[i] = tracks[i].Run();
+                }
+
 
                 bool doUpdateInternals = false;
-                if (nextTempo > 0)
+
+                if (next_µsPerQuarter > 0)
                 {
-                    Tempo = nextTempo;
-                    nextTempo = 0;
+                    µsPerQuarter = next_µsPerQuarter;
+                    next_µsPerQuarter = 0;
                     doUpdateInternals = true;
                 }
-                if (nextTimeSignature != null)
+
+                if (next_beatsPerMeasure > 0)
                 {
-                    TimeSignature = nextTimeSignature;
-                    nextTimeSignature = null;
+                    beatsPerMeasure = next_beatsPerMeasure;
+                    beatsPerQuarter = next_beatsPerQuarter;
+
+                    next_beatsPerMeasure = 0;
+                    next_beatsPerQuarter = 0;
+
                     doUpdateInternals = true;
                 }
                 if (doUpdateInternals)
                     UpdateInternals();
 
-                while (sw.ElapsedMilliseconds < entryTime + tickDurationInMs)
-                    await Task.Yield();
+                //Tick?.Invoke(this, EventArgs.Empty);
+
+                //while (sw.ElapsedMilliseconds < entryTime + µsPerTick)
+                //    await Task.Yield();
             }
         }
 
-        public void Pause()
+        public void SendMessage(IMidiMessage msg)
         {
-            isRunning = false;
-            //timer?.Cancel();
-            //timer = null;
-        }
-
-        public void Stop()
-        {
-            isRunning = false;
-            //timer?.Cancel();
-            //timer = null;
-            Ticks = 0;
+            midiSynth.SendMessage(msg);
         }
     }
 }
