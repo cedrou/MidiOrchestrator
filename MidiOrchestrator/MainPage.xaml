@@ -9,16 +9,25 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <Button x:Name="btnLoad" Content="Load..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="btnLoad_Click"/>
-            
-            <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
-                <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnStop_Click"/>
-                <Button x:Name="btnStart" Content="Play" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnStart_Click"/>
-                <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnPause_Click"/>
-                <TextBlock TextWrapping="Wrap" Text="Song Position" Width="72" TextAlignment="Center" Margin="16,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <Slider Width="265"/>
-                <TextBlock TextWrapping="Wrap" Text="Tempo" Width="72" TextAlignment="Center" Margin="16,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBox x:Name="txtTempo" TextWrapping="Wrap" Text="{Binding Tempo, Mode=TwoWay}" VerticalAlignment="Center" Width="11"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="btnLoad" Content="Load..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="btnLoad_Click"/>
+
+                    <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
+                        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" VerticalAlignment="Center" Click="btnStop_Click"/>
+                        <Button x:Name="btnStart" Content="Play" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnStart_Click"/>
+                        <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Center" Click="btnPause_Click"/>
+                        <TextBlock TextWrapping="Wrap" Text="Song Position" Width="72" TextAlignment="Center" Margin="16,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Slider Width="265"/>
+                        <TextBlock TextWrapping="Wrap" Text="Tempo" Width="72" TextAlignment="Center" Margin="16,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBox x:Name="txtTempo" TextWrapping="Wrap" Text="{Binding Tempo, Mode=TwoWay}" VerticalAlignment="Center" Width="11"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical">
+                    <TextBlock  Text="{Binding MarkerText}" />
+                </StackPanel>
+
             </StackPanel>
 
             <StackPanel x:Name="trackCollection" Margin="10,0,0,0" Orientation="Horizontal">

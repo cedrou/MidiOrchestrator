@@ -1,4 +1,5 @@
 ﻿using MidiSharp;
+using MidiSharp.Events.Meta;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,10 @@ namespace MidiOrchestrator
 
         public IEnumerable<TrackRunner> VoiceTracks { get => tracks.Where(t => t.IsVoiceTrack); }
 
+        public String MarkerText { get; private set; }
+
+
+
         // Set by MIDI file or user
         private UInt32 ticksPerQuarter;
         private UInt32 µsPerQuarter;
@@ -49,17 +54,21 @@ namespace MidiOrchestrator
         private bool isPlaying = false;
 
         private List<TrackRunner> tracks;
-        private List<UInt32> deltaTicks;
+        private List<UInt32> nextEventTicks;
 
         public event PropertyChangedEventHandler PropertyChanged;
+        void NotifyPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
 
         public MidiSequencer(MidiSynthesizer midiSynth)
         {
             this.midiSynth = midiSynth;
 
-            µsPerQuarter = 500_000;
-            beatsPerMeasure = 4;
-            beatsPerQuarter = 1;
+            next_µsPerQuarter = 500_000;
+            next_beatsPerMeasure = 4;
+            next_beatsPerQuarter = 1;
             ticksPerQuarter = 96;
 
             Ticks = 0;
@@ -91,9 +100,9 @@ namespace MidiOrchestrator
 
             sequenceDump = sequence.ToString();
 
-            µsPerQuarter = 500_000;
-            beatsPerMeasure = 4;
-            beatsPerQuarter = 1;
+            next_µsPerQuarter = 500_000;
+            next_beatsPerMeasure = 4;
+            next_beatsPerQuarter = 1;
             ticksPerQuarter = 96;
 
             Ticks = 0;
@@ -101,27 +110,58 @@ namespace MidiOrchestrator
             if (sequence.DivisionType == DivisionType.TicksPerBeat)
                 ticksPerQuarter = (UInt32)sequence.TicksPerBeatOrFrame;
 
-            UpdateInternals();
-
 
             // Create the track list
             tracks = new List<TrackRunner>();
-            deltaTicks = new List<UInt32>();
+            nextEventTicks = new List<UInt32>();
 
             for (var trackIndex = 0; trackIndex < sequence.Tracks.Count; trackIndex++)
             {
                 tracks.Add(new TrackRunner(sequence.Tracks[trackIndex], this));
-                deltaTicks.Add((UInt32)sequence.Tracks[trackIndex].Events[0].DeltaTime);
+                nextEventTicks.Add((UInt32)sequence.Tracks[trackIndex].Events[0].DeltaTime);
             }
 
-            foreach (var i in Zeros(deltaTicks))
+            foreach (var i in Zeros(nextEventTicks))
             {
-                deltaTicks[i] = tracks[i].Run();
+                nextEventTicks[i] = tracks[i].Run();
             }
+
+            UpdateInternals();
+
+            // Compute duration
+            var maxEventTick = VoiceTracks.Select(t => t.Timeline.Last()).Max();
+
+            var NbMeasures = maxEventTick / ticksPerMeasure;
+            var NbBeats = maxEventTick / ticksPerBeat;
+
+            var deltaticks = 0L;
+            var current_µsPerTick = 500_000 / ticksPerQuarter;
+            var totalTimeInµs = 0L;
+            var ticksToEnd = maxEventTick;
+            foreach (var e in sequence.Tracks[0].Events)
+            {
+                deltaticks += e.DeltaTime;
+                ticksToEnd -= e.DeltaTime;
+                if (e is TempoMetaMidiEvent tempoEvent)
+                {
+                    totalTimeInµs += current_µsPerTick * deltaticks;
+                    deltaticks = 0;
+
+                    current_µsPerTick = (uint)tempoEvent.Value / ticksPerQuarter;
+                }
+            }
+
+            totalTimeInµs += current_µsPerTick * ticksToEnd;
+
+            var totalTime = TimeSpan.FromMilliseconds(totalTimeInµs / 1_000.0);
         }
 
         private void UpdateInternals()
         {
+            µsPerQuarter = next_µsPerQuarter;
+            beatsPerMeasure = next_beatsPerMeasure;
+            beatsPerQuarter = next_beatsPerQuarter;
+
             var quartersPerMeasure = (Single)beatsPerMeasure / beatsPerQuarter;
 
             ticksPerMeasure = (UInt32)(ticksPerQuarter * quartersPerMeasure);
@@ -129,11 +169,8 @@ namespace MidiOrchestrator
 
             µsPerTick = µsPerQuarter / ticksPerQuarter;
 
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs("Tempo"));
-                PropertyChanged(this, new PropertyChangedEventArgs("TimeSignature"));
-            }
+            NotifyPropertyChanged("Tempo");
+            NotifyPropertyChanged("TimeSignature");
         }
 
         public void Seek(UInt32 measure, UInt32 beatInMeasure)
@@ -157,6 +194,11 @@ namespace MidiOrchestrator
             next_beatsPerQuarter = den / 4;
         }
 
+        public void SetMarkerText(string text)
+        {
+            MarkerText = text;
+            NotifyPropertyChanged("MarkerText");
+        }
 
         private Task loopTask = null;
         public void Start()
@@ -190,7 +232,7 @@ namespace MidiOrchestrator
 
             while (isPlaying)
             {
-                var minDeltaTick = deltaTicks.Min();
+                var minDeltaTick = nextEventTicks.Min();
                 Debug.Assert(minDeltaTick > 0);
 
                 var msToNextEvent = minDeltaTick * µsPerTick / 1000 - (sw.ElapsedMilliseconds - lastTickTime);
@@ -201,15 +243,15 @@ namespace MidiOrchestrator
 
                 Ticks += minDeltaTick;
 
-                for (var i = 0; i < deltaTicks.Count; i++)
+                for (var i = 0; i < nextEventTicks.Count; i++)
                 {
-                    if (deltaTicks[i] < UInt32.MaxValue)
-                        deltaTicks[i] -= minDeltaTick;
+                    if (nextEventTicks[i] < UInt32.MaxValue)
+                        nextEventTicks[i] -= minDeltaTick;
                 }
 
-                foreach (var i in Zeros(deltaTicks))
+                foreach (var i in Zeros(nextEventTicks))
                 {
-                    deltaTicks[i] = tracks[i].Run();
+                    nextEventTicks[i] = tracks[i].Run();
                 }
 
 

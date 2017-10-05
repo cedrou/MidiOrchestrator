@@ -21,7 +21,7 @@ namespace MidiOrchestrator
     {
         MidiSequencer sequencer;
         MidiTrack track;
-        List<Tuple<Int64, MidiEvent>> timeline;
+        List<Int64> timeline;
         int timelinePointer;
         private byte[] velocities = new byte[128];
 
@@ -37,12 +37,11 @@ namespace MidiOrchestrator
         public Int32 Pan { get; private set; }
         public Int32 Program { get; private set; }
 
-        public Int32 VuMeter
-        {
-            get {
-                return (Int32)(100 * Math.Sqrt(velocities.Where(v => v > 0).Select(v => v*v).DefaultIfEmpty().Average()) / 127);
-            }
-        }
+        public Int32 VuMeter => (Int32)(100 * Math.Sqrt(velocities.Where(v => v > 0).Select(v => v*v).DefaultIfEmpty().Average()) / 127);
+
+        public IEnumerable<Int64> Timeline => timeline;
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -51,7 +50,6 @@ namespace MidiOrchestrator
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
-        public IEnumerable<Tuple<Int64, MidiEvent>> Timeline => timeline;
 
         public TrackRunner(MidiTrack track, MidiSequencer sequencer)
         {
@@ -61,11 +59,11 @@ namespace MidiOrchestrator
             Name = "";
 
             Int64 tick = 0;
-            timeline = new List<Tuple<Int64, MidiEvent>>();
+            timeline = new List<Int64>();
             foreach (var e in track.Events)
             {
                 tick += e.DeltaTime;
-                timeline.Add(new Tuple<Int64, MidiEvent>(tick, e));
+                timeline.Add(tick);
             }
 
             var firstVoiceEvent = track.FirstOrDefault(e => e is VoiceMidiEvent) as VoiceMidiEvent;
@@ -144,12 +142,13 @@ namespace MidiOrchestrator
 
             // Meta events
             //case SequenceNumberMetaMidiEvent ev:
+
             //case TextMetaMidiEvent ev:
             //case CopyrightTextMetaMidiEvent ev:
             case SequenceTrackNameTextMetaMidiEvent ev: Name = ev.Text; NotifyPropertyChanged(nameof(Name)); break;
             //case InstrumentTextMetaMidiEvent ev:
             //case LyricTextMetaMidiEvent ev:
-            //case MarkerTextMetaMidiEvent ev:
+            case MarkerTextMetaMidiEvent ev:        sequencer.SetMarkerText(ev.Text); break;
             //case CuePointTextMetaMidiEvent ev:
             //case ProgramNameTextMetaMidiEvent ev:
             //case DeviceNameTextMidiEvent ev:
