@@ -25,6 +25,7 @@ namespace MidiOrchestrator
         int timelinePointer;
         private byte[] velocities = new byte[128];
 
+
         public String Name { get; private set; }
 
         public Int32 Channel { get; }
@@ -35,6 +36,13 @@ namespace MidiOrchestrator
         public Int32 Expression { get; private set; }
         public Int32 Pan { get; private set; }
         public Int32 Program { get; private set; }
+
+        public Int32 VuMeter
+        {
+            get {
+                return (Int32)(100 * Math.Sqrt(velocities.Where(v => v > 0).Select(v => v*v).DefaultIfEmpty().Average()) / 127);
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -103,10 +111,12 @@ namespace MidiOrchestrator
             case OffNoteVoiceMidiEvent ev:
                 sequencer.SendMessage(new MidiNoteOffMessage(ev.Channel, ev.Note, ev.Velocity));
                 velocities[ev.Note] = 0;
+                NotifyPropertyChanged("VuMeter");
                 break;
             case OnNoteVoiceMidiEvent ev:
                 sequencer.SendMessage(new MidiNoteOnMessage(ev.Channel, ev.Note, ev.Velocity));
                 velocities[ev.Note] = ev.Velocity;
+                NotifyPropertyChanged("VuMeter");
                 break;
 
             case ControllerVoiceMidiEvent ev:

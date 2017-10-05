@@ -23,10 +23,5 @@ namespace MidiOrchestrator
         {
             this.InitializeComponent();
         }
-
-        public string TrackName {
-            get => txtName.Text;
-            set => txtName.Text = value;
-        }
     }
 }

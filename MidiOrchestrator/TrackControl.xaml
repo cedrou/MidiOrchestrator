@@ -17,7 +17,9 @@
                     FontSize="14" Padding="0"
                     />
 
-            <Slider x:Name="densityMeter" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Height="93" Margin="8" />
+            <Slider x:Name="vuMeter" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Height="93" Margin="8"
+                    Value="{Binding VuMeter, FallbackValue=0}" Minimum="0" Maximum="100"/>
+
 
             <Button x:Name="btnSolo" Content="S" HorizontalAlignment="Center" Width="32" Height="32" Margin="8"/>
             <Button x:Name="btnMute" Content="M" HorizontalAlignment="Center" Width="32" Height="32" Margin="8"/>
