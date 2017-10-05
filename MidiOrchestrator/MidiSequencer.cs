@@ -170,7 +170,7 @@ namespace MidiOrchestrator
             await loopTask;
             foreach (var t in VoiceTracks)
             {
-                t.Stop();
+                t.StopAllNotes();
             }
         }
 

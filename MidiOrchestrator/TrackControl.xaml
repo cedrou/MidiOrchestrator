@@ -6,18 +6,31 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="400"
+    d:DesignHeight="528.667"
     d:DesignWidth="55">
 
     <Grid >
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
-            <Button x:Name="btnInfo" Content="1" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
-            <Slider x:Name="densityMeter" Orientation="Vertical" Height="93" VerticalAlignment="Center" HorizontalAlignment="Center" />
-            <Button x:Name="btnSolo" Content="Solo" HorizontalAlignment="Center"/>
-            <Button x:Name="btnMute" Content="Mute" HorizontalAlignment="Center"/>
-            <Button x:Name="btnRec" Content="Rec" HorizontalAlignment="Center"/>
-            <Slider x:Name="volumeSlider" Orientation="Vertical" Height="93" VerticalAlignment="Center" HorizontalAlignment="Center" />
-            <TextBlock x:Name="txtName" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1" BorderBrush="{ThemeResource ButtonBorderThemeBrush}">
+
+            <Button x:Name="btnProgram" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="32" Height="32" Margin="8"
+                    Content="{Binding Program, FallbackValue=0}"
+                    FontSize="14" Padding="0"
+                    />
+
+            <Slider x:Name="densityMeter" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Height="93" Margin="8" />
+
+            <Button x:Name="btnSolo" Content="S" HorizontalAlignment="Center" Width="32" Height="32" Margin="8"/>
+            <Button x:Name="btnMute" Content="M" HorizontalAlignment="Center" Width="32" Height="32" Margin="8"/>
+            <Button x:Name="btnRec" Content="R" HorizontalAlignment="Center" Width="32" Height="32" Margin="8"/>
+
+            <Slider x:Name="panSlider" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="48" Margin="8"
+                    Value="{Binding Pan, FallbackValue=64}" Minimum="0" Maximum="127"/>
+
+            <Slider x:Name="volumeSlider" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Height="100" Margin="8"
+                    Value="{Binding Volume, FallbackValue=0}" Minimum="0" Maximum="127"/>
+
+            <TextBlock x:Name="txtName" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8" Width="76"
+                       Text="{Binding Name, FallbackValue=-}" TextAlignment="Center"/>
         </StackPanel>
 
     </Grid>

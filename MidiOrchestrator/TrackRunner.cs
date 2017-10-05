@@ -31,7 +31,17 @@ namespace MidiOrchestrator
 
         public Boolean IsVoiceTrack { get; }
 
+        public Int32 Volume { get; private set; }
+        public Int32 Expression { get; private set; }
+        public Int32 Pan { get; private set; }
+        public Int32 Program { get; private set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
+
+        void NotifyPropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
 
         public IEnumerable<Tuple<Int64, MidiEvent>> Timeline => timeline;
 
@@ -41,7 +51,6 @@ namespace MidiOrchestrator
             this.track = track;
 
             Name = "";
-            Channel = -1;
 
             Int64 tick = 0;
             timeline = new List<Tuple<Int64, MidiEvent>>();
@@ -54,6 +63,11 @@ namespace MidiOrchestrator
             var firstVoiceEvent = track.FirstOrDefault(e => e is VoiceMidiEvent) as VoiceMidiEvent;
             IsVoiceTrack = firstVoiceEvent != null;
             Channel = firstVoiceEvent?.Channel ?? -1;
+
+            Volume = 100;
+            Expression = 127;
+            Pan = 64;
+            Program = 0;
 
             timelinePointer = 0;
         }
@@ -69,7 +83,7 @@ namespace MidiOrchestrator
             return timelinePointer < track.Events.Count ? (UInt32)track.Events[timelinePointer].DeltaTime : UInt32.MaxValue;
         }
 
-        public void Stop()
+        public void StopAllNotes()
         {
             for (byte i = 0; i < 128; i++)
             {
@@ -85,7 +99,7 @@ namespace MidiOrchestrator
         {
             switch (e)
             {
-            // MIDI messages
+            // Voice messages
             case OffNoteVoiceMidiEvent ev:
                 sequencer.SendMessage(new MidiNoteOffMessage(ev.Channel, ev.Note, ev.Velocity));
                 velocities[ev.Note] = 0;
@@ -95,9 +109,23 @@ namespace MidiOrchestrator
                 velocities[ev.Note] = ev.Velocity;
                 break;
 
+            case ControllerVoiceMidiEvent ev:
+                sequencer.SendMessage(new MidiControlChangeMessage(ev.Channel, ev.Number, ev.Value));
+                switch ((Controller)ev.Number)
+                {
+                case Controller.VolumeCourse:       Volume = ev.Value; NotifyPropertyChanged(nameof(Volume)); break;
+                case Controller.ExpressionCourse:   Expression = ev.Value; NotifyPropertyChanged(nameof(Expression)); break;
+                case Controller.PanPositionCourse:  Pan = ev.Value; NotifyPropertyChanged(nameof(Pan)); break;
+                }
+                break;
+
+            case ProgramChangeVoiceMidiEvent ev:
+                sequencer.SendMessage(new MidiProgramChangeMessage(ev.Channel, ev.Number));
+                Program = ev.Number;
+                NotifyPropertyChanged(nameof(Program));
+                break;
+
             case AftertouchNoteVoiceMidiEvent ev:   sequencer.SendMessage(new MidiPolyphonicKeyPressureMessage(ev.Channel, ev.Note, ev.Pressure)); break;
-            case ControllerVoiceMidiEvent ev:       sequencer.SendMessage(new MidiControlChangeMessage(ev.Channel, ev.Number, ev.Value)); break;
-            case ProgramChangeVoiceMidiEvent ev:    sequencer.SendMessage(new MidiProgramChangeMessage(ev.Channel, ev.Number)); break;
             case ChannelPressureVoiceMidiEvent ev:  sequencer.SendMessage(new MidiChannelPressureMessage(ev.Channel, ev.Pressure)); break;
             case PitchWheelVoiceMidiEvent ev:       sequencer.SendMessage(new MidiPitchBendChangeMessage(ev.Channel, (UInt16)ev.Position)); break;
 
@@ -108,7 +136,7 @@ namespace MidiOrchestrator
             //case SequenceNumberMetaMidiEvent ev:
             //case TextMetaMidiEvent ev:
             //case CopyrightTextMetaMidiEvent ev:
-            case SequenceTrackNameTextMetaMidiEvent ev: Name = ev.Text; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TrackName")); break;
+            case SequenceTrackNameTextMetaMidiEvent ev: Name = ev.Text; NotifyPropertyChanged(nameof(Name)); break;
             //case InstrumentTextMetaMidiEvent ev:
             //case LyricTextMetaMidiEvent ev:
             //case MarkerTextMetaMidiEvent ev:
