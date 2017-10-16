@@ -78,13 +78,13 @@ namespace MidiOrchestrator
             timelinePointer = 0;
         }
 
-        public UInt32 Run()
+        public UInt32 Run(bool playVoices)
         {
             do
             {
                 ProcessEvent(track.Events[timelinePointer]);
                 timelinePointer++;
-            } while (timelinePointer < track.Events.Count && track.Events[timelinePointer].DeltaTime == 0);
+            } while (timelinePointer < track.Events.Count && track.Events[timelinePointer].DeltaTime == 0 && (playVoices || track.Events[timelinePointer] is VoiceMidiEvent));
 
             return timelinePointer < track.Events.Count ? (UInt32)track.Events[timelinePointer].DeltaTime : UInt32.MaxValue;
         }

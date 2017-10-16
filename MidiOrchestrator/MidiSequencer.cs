@@ -16,9 +16,9 @@ namespace MidiOrchestrator
 {
     public class MidiSequencer : INotifyPropertyChanged
     {
-        public UInt32 Tempo { get => 60_000_000 * beatsPerQuarter / µsPerQuarter; }
+        public UInt32 Tempo { get => (UInt32)(60_000_000 * beatsPerQuarter / µsPerQuarter); }
 
-        public Tuple<UInt32, UInt32> TimeSignature { get => new Tuple<UInt32, UInt32>(beatsPerMeasure, beatsPerQuarter * 4); }
+        public Tuple<UInt32, UInt32> TimeSignature { get => new Tuple<UInt32, UInt32>(beatsPerMeasure, (UInt32)(beatsPerQuarter * 4)); }
 
         public UInt32 Ticks { get; private set; }
 
@@ -36,11 +36,11 @@ namespace MidiOrchestrator
         private UInt32 ticksPerQuarter;
         private UInt32 µsPerQuarter;
         private UInt32 beatsPerMeasure;
-        private UInt32 beatsPerQuarter;
+        private Double beatsPerQuarter;
 
         private UInt32 next_µsPerQuarter;
         private UInt32 next_beatsPerMeasure;
-        private UInt32 next_beatsPerQuarter;
+        private Double next_beatsPerQuarter;
 
         // Internal cached values
         private UInt32 ticksPerMeasure;
@@ -68,7 +68,7 @@ namespace MidiOrchestrator
 
             next_µsPerQuarter = 500_000;
             next_beatsPerMeasure = 4;
-            next_beatsPerQuarter = 1;
+            next_beatsPerQuarter = 1.0;
             ticksPerQuarter = 96;
 
             Ticks = 0;
@@ -123,7 +123,7 @@ namespace MidiOrchestrator
 
             foreach (var i in Zeros(nextEventTicks))
             {
-                nextEventTicks[i] = tracks[i].Run();
+                nextEventTicks[i] = tracks[i].Run(false);
             }
 
             UpdateInternals();
@@ -158,11 +158,11 @@ namespace MidiOrchestrator
 
         private void UpdateInternals()
         {
-            µsPerQuarter = next_µsPerQuarter;
-            beatsPerMeasure = next_beatsPerMeasure;
-            beatsPerQuarter = next_beatsPerQuarter;
+            if (next_µsPerQuarter > 0) µsPerQuarter = next_µsPerQuarter;
+            if (next_beatsPerMeasure > 0) beatsPerMeasure = next_beatsPerMeasure;
+            if (next_beatsPerQuarter > 0) beatsPerQuarter = next_beatsPerQuarter;
 
-            var quartersPerMeasure = (Single)beatsPerMeasure / beatsPerQuarter;
+            var quartersPerMeasure = beatsPerMeasure / beatsPerQuarter;
 
             ticksPerMeasure = (UInt32)(ticksPerQuarter * quartersPerMeasure);
             ticksPerBeat = ticksPerMeasure / beatsPerMeasure;
@@ -180,7 +180,7 @@ namespace MidiOrchestrator
 
         public void SetTempo(UInt32 bpm)
         {
-            next_µsPerQuarter = 60_000_000 * beatsPerQuarter / bpm;
+            next_µsPerQuarter = (UInt32)(60_000_000 * beatsPerQuarter / bpm);
         }
 
         public void SetQuarterDuration(UInt32 µsPerQuarter)
@@ -191,7 +191,7 @@ namespace MidiOrchestrator
         public void SetTimeSignature(UInt32 num, UInt32 den)
         {
             next_beatsPerMeasure = num;
-            next_beatsPerQuarter = den / 4;
+            next_beatsPerQuarter = den / 4.0;
         }
 
         public void SetMarkerText(string text)
@@ -233,7 +233,7 @@ namespace MidiOrchestrator
             while (isPlaying)
             {
                 var minDeltaTick = nextEventTicks.Min();
-                Debug.Assert(minDeltaTick > 0);
+                //Debug.Assert(minDeltaTick > 0);
 
                 var msToNextEvent = minDeltaTick * µsPerTick / 1000 - (sw.ElapsedMilliseconds - lastTickTime);
                 if (msToNextEvent > 0)
@@ -251,7 +251,7 @@ namespace MidiOrchestrator
 
                 foreach (var i in Zeros(nextEventTicks))
                 {
-                    nextEventTicks[i] = tracks[i].Run();
+                    nextEventTicks[i] = tracks[i].Run(true);
                 }
 
 
