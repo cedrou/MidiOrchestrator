@@ -1,0 +1,1476 @@
+﻿MIDI Sequence
+Format: One
+Tracks: 5
+Division: 960
+
+TimeSignatureMetaMidiEvent	0	0x58	02	01	30	08
+KeySignatureMetaMidiEvent	0	0x59	Flat1	Major
+TempoMetaMidiEvent	0	0x51	480000
+SequenceTrackNameTextMetaMidiEvent	0	0x03	Smile
+TextMetaMidiEvent	0	0x01	Musique : Charles CHAPLIN
+CopyrightTextMetaMidiEvent	0	0x02	Copyright �
+TempoMetaMidiEvent	53760	0x51	480000
+TempoMetaMidiEvent	169	0x51	487163
+TempoMetaMidiEvent	169	0x51	494545
+TempoMetaMidiEvent	168	0x51	502152
+TempoMetaMidiEvent	169	0x51	510000
+TempoMetaMidiEvent	169	0x51	518095
+TempoMetaMidiEvent	169	0x51	526451
+TempoMetaMidiEvent	168	0x51	535081
+TempoMetaMidiEvent	169	0x51	543999
+TempoMetaMidiEvent	169	0x51	553220
+TempoMetaMidiEvent	169	0x51	562757
+TempoMetaMidiEvent	168	0x51	572630
+TempoMetaMidiEvent	169	0x51	582857
+TempoMetaMidiEvent	169	0x51	593453
+TempoMetaMidiEvent	169	0x51	604444
+TempoMetaMidiEvent	168	0x51	615848
+TempoMetaMidiEvent	169	0x51	627692
+TempoMetaMidiEvent	4980	0x51	480000
+TempoMetaMidiEvent	57600	0x51	480000
+TempoMetaMidiEvent	169	0x51	487163
+TempoMetaMidiEvent	169	0x51	494545
+TempoMetaMidiEvent	168	0x51	502152
+TempoMetaMidiEvent	169	0x51	510000
+TempoMetaMidiEvent	169	0x51	518095
+TempoMetaMidiEvent	169	0x51	526451
+TempoMetaMidiEvent	168	0x51	535081
+TempoMetaMidiEvent	169	0x51	543999
+TempoMetaMidiEvent	169	0x51	553220
+TempoMetaMidiEvent	169	0x51	562757
+TempoMetaMidiEvent	168	0x51	572630
+TempoMetaMidiEvent	169	0x51	582857
+TempoMetaMidiEvent	169	0x51	593453
+TempoMetaMidiEvent	169	0x51	604444
+TempoMetaMidiEvent	168	0x51	615848
+TempoMetaMidiEvent	169	0x51	627692
+TimeSignatureMetaMidiEvent	28020	0x58	06	02	48	08
+EndOfTrackMetaMidiEvent	1	0x2F
+
+ProgramChangeVoiceMidiEvent	0	0x0	AcousticGrand
+ControllerVoiceMidiEvent	0	0x0	AllControllersOff	0x00
+ControllerVoiceMidiEvent	0	0x0	HoldPedalOnOff	0x00
+ControllerVoiceMidiEvent	0	0x0	EffectsLevel	0x30
+ControllerVoiceMidiEvent	0	0x0	PanPositionCourse	0x00
+ControllerVoiceMidiEvent	0	0x0	VolumeCourse	0x64
+SequenceTrackNameTextMetaMidiEvent	0	0x03	Soprano
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x0	F5	0x3C
+OffNoteVoiceMidiEvent	1920	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x0	G5	0x4B
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x0	A5	0x4E
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	heart
+OnNoteVoiceMidiEvent	0	0x0	G5	0x43
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x0	F5	0x43
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	ach
+OnNoteVoiceMidiEvent	0	0x0	E5	0x46
+OffNoteVoiceMidiEvent	960	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing,
+OnNoteVoiceMidiEvent	0	0x0	D5	0x46
+OffNoteVoiceMidiEvent	960	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x0	E5	0x4D
+OffNoteVoiceMidiEvent	1920	0x0	E5	0x00
+LyricTextMetaMidiEvent	960	0x05	e
+OnNoteVoiceMidiEvent	0	0x0	F5	0x3F
+OffNoteVoiceMidiEvent	480	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	ven
+OnNoteVoiceMidiEvent	0	0x0	G5	0x4A
+OffNoteVoiceMidiEvent	480	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x0	F5	0x44
+OffNoteVoiceMidiEvent	1440	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	it's
+OnNoteVoiceMidiEvent	0	0x0	E5	0x44
+OffNoteVoiceMidiEvent	480	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	brea
+OnNoteVoiceMidiEvent	0	0x0	D5	0x45
+OffNoteVoiceMidiEvent	960	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	king.
+OnNoteVoiceMidiEvent	0	0x0	C5	0x40
+OffNoteVoiceMidiEvent	960	0x0	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	When
+OnNoteVoiceMidiEvent	0	0x0	D5	0x4B
+OffNoteVoiceMidiEvent	1920	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	there
+OnNoteVoiceMidiEvent	0	0x0	E5	0x49
+OffNoteVoiceMidiEvent	960	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	are
+OnNoteVoiceMidiEvent	0	0x0	F5	0x48
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	clouds
+OnNoteVoiceMidiEvent	0	0x0	D5	0x44
+OffNoteVoiceMidiEvent	1920	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	in
+OnNoteVoiceMidiEvent	0	0x0	E5	0x50
+OffNoteVoiceMidiEvent	960	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x0	F5	0x50
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	sky
+OnNoteVoiceMidiEvent	0	0x0	G5	0x5D
+OffNoteVoiceMidiEvent	1920	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5B
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	get
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x5A
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	by
+OnNoteVoiceMidiEvent	0	0x0	F#5	0x46
+OffNoteVoiceMidiEvent	1920	0x0	F#5	0x00
+LyricTextMetaMidiEvent	0	0x05	if
+OnNoteVoiceMidiEvent	0	0x0	G5	0x4B
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	you
+OnNoteVoiceMidiEvent	0	0x0	A5	0x53
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	960	0x05	smile
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x4A
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	through
+OnNoteVoiceMidiEvent	0	0x0	F#5	0x45
+OffNoteVoiceMidiEvent	960	0x0	F#5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x0	G5	0x5B
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	fear
+OnNoteVoiceMidiEvent	0	0x0	A5	0x68
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x64
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	sor
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5F
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	row,
+OnNoteVoiceMidiEvent	0	0x0	G5	0x55
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	960	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x0	F5	0x4C
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5D
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	may
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x59
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x0	G#5	0x51
+OffNoteVoiceMidiEvent	1440	0x0	G#5	0x00
+LyricTextMetaMidiEvent	0	0x05	to
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x5B
+OffNoteVoiceMidiEvent	480	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	mor
+OnNoteVoiceMidiEvent	0	0x0	C6	0x5B
+OffNoteVoiceMidiEvent	960	0x0	C6	0x00
+LyricTextMetaMidiEvent	0	0x05	row
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x4F
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x0	A5	0x51
+OffNoteVoiceMidiEvent	1920	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	see
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x59
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x0	A5	0x4E
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	sun
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x57
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	come
+OnNoteVoiceMidiEvent	0	0x0	A5	0x52
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	shin
+OnNoteVoiceMidiEvent	0	0x0	G5	0x50
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing
+OnNoteVoiceMidiEvent	0	0x0	F5	0x4F
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	through
+OnNoteVoiceMidiEvent	0	0x0	G5	0x5A
+OffNoteVoiceMidiEvent	2880	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	for
+OnNoteVoiceMidiEvent	0	0x0	D5	0x4C
+OffNoteVoiceMidiEvent	960	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	you.
+OnNoteVoiceMidiEvent	0	0x0	A5	0x63
+OffNoteVoiceMidiEvent	3840	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	Light
+OnNoteVoiceMidiEvent	0	0x0	F5	0x3C
+OffNoteVoiceMidiEvent	1920	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	up
+OnNoteVoiceMidiEvent	0	0x0	G5	0x4E
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x0	A5	0x54
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	face
+OnNoteVoiceMidiEvent	0	0x0	G5	0x4C
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	with
+OnNoteVoiceMidiEvent	0	0x0	F5	0x47
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	glad
+OnNoteVoiceMidiEvent	0	0x0	E5	0x4E
+OffNoteVoiceMidiEvent	960	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x0	D5	0x4E
+OffNoteVoiceMidiEvent	960	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	Hide
+OnNoteVoiceMidiEvent	0	0x0	E5	0x57
+OffNoteVoiceMidiEvent	1920	0x0	E5	0x00
+LyricTextMetaMidiEvent	960	0x05	ev'
+OnNoteVoiceMidiEvent	0	0x0	F5	0x4E
+OffNoteVoiceMidiEvent	480	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	ry
+OnNoteVoiceMidiEvent	0	0x0	G5	0x56
+OffNoteVoiceMidiEvent	480	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	trace
+OnNoteVoiceMidiEvent	0	0x0	F5	0x4F
+OffNoteVoiceMidiEvent	1440	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	of
+OnNoteVoiceMidiEvent	0	0x0	E5	0x52
+OffNoteVoiceMidiEvent	480	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	sad
+OnNoteVoiceMidiEvent	0	0x0	D5	0x4E
+OffNoteVoiceMidiEvent	960	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x0	C5	0x50
+OffNoteVoiceMidiEvent	960	0x0	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	Al
+OnNoteVoiceMidiEvent	0	0x0	D5	0x58
+OffNoteVoiceMidiEvent	1920	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x0	E5	0x58
+OffNoteVoiceMidiEvent	960	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	a
+OnNoteVoiceMidiEvent	0	0x0	F5	0x58
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	tear
+OnNoteVoiceMidiEvent	0	0x0	D5	0x4A
+OffNoteVoiceMidiEvent	1920	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	may
+OnNoteVoiceMidiEvent	0	0x0	E5	0x5B
+OffNoteVoiceMidiEvent	960	0x0	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x0	F5	0x5F
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	e
+OnNoteVoiceMidiEvent	0	0x0	G5	0x60
+OffNoteVoiceMidiEvent	1920	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	ver
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5D
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	so
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x63
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	near.
+OnNoteVoiceMidiEvent	0	0x0	F#5	0x58
+OffNoteVoiceMidiEvent	1920	0x0	F#5	0x00
+LyricTextMetaMidiEvent	0	0x05	That's
+OnNoteVoiceMidiEvent	0	0x0	G5	0x58
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x0	A5	0x62
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	960	0x05	time
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x56
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	you
+OnNoteVoiceMidiEvent	0	0x0	C6	0x63
+OffNoteVoiceMidiEvent	960	0x0	C6	0x00
+LyricTextMetaMidiEvent	0	0x05	must
+OnNoteVoiceMidiEvent	0	0x0	D6	0x6E
+OffNoteVoiceMidiEvent	960	0x0	D6	0x00
+LyricTextMetaMidiEvent	0	0x05	keep
+OnNoteVoiceMidiEvent	0	0x0	C6	0x64
+OffNoteVoiceMidiEvent	960	0x0	C6	0x00
+LyricTextMetaMidiEvent	0	0x05	on
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x63
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	try
+OnNoteVoiceMidiEvent	0	0x0	A5	0x67
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing,
+OnNoteVoiceMidiEvent	0	0x0	G5	0x6A
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x6C
+OffNoteVoiceMidiEvent	1920	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	what's
+OnNoteVoiceMidiEvent	0	0x0	C6	0x6A
+OffNoteVoiceMidiEvent	960	0x0	C6	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x0	C#6	0x66
+OffNoteVoiceMidiEvent	960	0x0	C#6	0x00
+LyricTextMetaMidiEvent	0	0x05	use
+OnNoteVoiceMidiEvent	0	0x0	C6	0x5E
+OffNoteVoiceMidiEvent	960	0x0	C6	0x00
+LyricTextMetaMidiEvent	0	0x05	of
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x5A
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	cry
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5A
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing ?
+OnNoteVoiceMidiEvent	0	0x0	G5	0x59
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x0	A5	0x6B
+OffNoteVoiceMidiEvent	1920	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	find
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x68
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	that
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5C
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	life
+OnNoteVoiceMidiEvent	0	0x0	A#5	0x64
+OffNoteVoiceMidiEvent	960	0x0	A#5	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5E
+OffNoteVoiceMidiEvent	960	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	still
+OnNoteVoiceMidiEvent	0	0x0	G5	0x5B
+OffNoteVoiceMidiEvent	960	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	worth
+OnNoteVoiceMidiEvent	0	0x0	F5	0x57
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	while
+OnNoteVoiceMidiEvent	0	0x0	G5	0x68
+OffNoteVoiceMidiEvent	2880	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	If
+OnNoteVoiceMidiEvent	0	0x0	D5	0x52
+OffNoteVoiceMidiEvent	960	0x0	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x0	A5	0x6C
+OffNoteVoiceMidiEvent	1920	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	just
+OnNoteVoiceMidiEvent	0	0x0	A5	0x61
+OffNoteVoiceMidiEvent	1920	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x0	F5	0x58
+OnNoteVoiceMidiEvent	1920	0x0	G5	0x6C
+OffNoteVoiceMidiEvent	38	0x0	F5	0x00
+OnNoteVoiceMidiEvent	922	0x0	A5	0x73
+OffNoteVoiceMidiEvent	19	0x0	G5	0x00
+OnNoteVoiceMidiEvent	941	0x0	G5	0x6B
+OffNoteVoiceMidiEvent	19	0x0	A5	0x00
+OnNoteVoiceMidiEvent	1901	0x0	F5	0x63
+OffNoteVoiceMidiEvent	38	0x0	G5	0x00
+OffNoteVoiceMidiEvent	1785	0x0	F5	0x00
+LyricTextMetaMidiEvent	97	0x05	Smile,
+OnNoteVoiceMidiEvent	0	0x0	F5	0x60
+OnNoteVoiceMidiEvent	1920	0x0	G5	0x67
+OffNoteVoiceMidiEvent	38	0x0	F5	0x00
+OnNoteVoiceMidiEvent	922	0x0	A5	0x69
+OffNoteVoiceMidiEvent	19	0x0	G5	0x00
+OnNoteVoiceMidiEvent	941	0x0	E5	0x60
+OnNoteVoiceMidiEvent	0	0x0	G5	0x60
+OffNoteVoiceMidiEvent	19	0x0	A5	0x00
+OnNoteVoiceMidiEvent	1901	0x0	D5	0x5C
+OnNoteVoiceMidiEvent	0	0x0	F5	0x5C
+OffNoteVoiceMidiEvent	38	0x0	E5	0x00
+OffNoteVoiceMidiEvent	0	0x0	G5	0x00
+OffNoteVoiceMidiEvent	1785	0x0	D5	0x00
+OffNoteVoiceMidiEvent	0	0x0	F5	0x00
+LyricTextMetaMidiEvent	97	0x05	Oo
+OnNoteVoiceMidiEvent	0	0x0	D5	0x42
+OnNoteVoiceMidiEvent	960	0x0	E5	0x49
+OffNoteVoiceMidiEvent	19	0x0	D5	0x00
+OnNoteVoiceMidiEvent	941	0x0	F5	0x4D
+OffNoteVoiceMidiEvent	19	0x0	E5	0x00
+OffNoteVoiceMidiEvent	892	0x0	F5	0x00
+LyricTextMetaMidiEvent	49	0x05	if
+OnNoteVoiceMidiEvent	0	0x0	F5	0x5B
+OnNoteVoiceMidiEvent	0	0x0	A5	0x5B
+OffNoteVoiceMidiEvent	960	0x0	F5	0x00
+OffNoteVoiceMidiEvent	0	0x0	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x0	F5	0x49
+OffNoteVoiceMidiEvent	1920	0x0	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	just
+OnNoteVoiceMidiEvent	0	0x0	E5	0x5A
+OnNoteVoiceMidiEvent	0	0x0	G5	0x5A
+OffNoteVoiceMidiEvent	1920	0x0	E5	0x00
+OffNoteVoiceMidiEvent	0	0x0	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	smile.
+OnNoteVoiceMidiEvent	0	0x0	F5	0x50
+OffNoteVoiceMidiEvent	9600	0x0	F5	0x00
+EndOfTrackMetaMidiEvent	1	0x2F
+
+ProgramChangeVoiceMidiEvent	0	0x1	AcousticGrand
+ControllerVoiceMidiEvent	0	0x1	AllControllersOff	0x00
+ControllerVoiceMidiEvent	0	0x1	HoldPedalOnOff	0x00
+ControllerVoiceMidiEvent	0	0x1	EffectsLevel	0x30
+ControllerVoiceMidiEvent	0	0x1	PanPositionCourse	0x24
+ControllerVoiceMidiEvent	0	0x1	VolumeCourse	0x64
+SequenceTrackNameTextMetaMidiEvent	0	0x03	Alto
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x1	F5	0x43
+OffNoteVoiceMidiEvent	1920	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x1	G5	0x4D
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x1	A5	0x4B
+OffNoteVoiceMidiEvent	960	0x1	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	heart
+OnNoteVoiceMidiEvent	0	0x1	G5	0x44
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x1	F5	0x40
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	ach
+OnNoteVoiceMidiEvent	0	0x1	E5	0x43
+OffNoteVoiceMidiEvent	960	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing,
+OnNoteVoiceMidiEvent	0	0x1	D5	0x3D
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x1	E5	0x4F
+OffNoteVoiceMidiEvent	1920	0x1	E5	0x00
+LyricTextMetaMidiEvent	960	0x05	e
+OnNoteVoiceMidiEvent	0	0x1	F5	0x3E
+OffNoteVoiceMidiEvent	480	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	ven
+OnNoteVoiceMidiEvent	0	0x1	G5	0x4A
+OffNoteVoiceMidiEvent	480	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x1	F5	0x46
+OffNoteVoiceMidiEvent	1440	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	it's
+OnNoteVoiceMidiEvent	0	0x1	E5	0x41
+OffNoteVoiceMidiEvent	480	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	brea
+OnNoteVoiceMidiEvent	0	0x1	D5	0x48
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	king.
+OnNoteVoiceMidiEvent	0	0x1	C5	0x43
+OffNoteVoiceMidiEvent	960	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	When
+OnNoteVoiceMidiEvent	0	0x1	C5	0x42
+OffNoteVoiceMidiEvent	1920	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	there
+OnNoteVoiceMidiEvent	0	0x1	C5	0x48
+OffNoteVoiceMidiEvent	960	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	are
+OnNoteVoiceMidiEvent	0	0x1	C5	0x48
+OffNoteVoiceMidiEvent	960	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	clouds
+OnNoteVoiceMidiEvent	0	0x1	B4	0x47
+OffNoteVoiceMidiEvent	1920	0x1	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	in
+OnNoteVoiceMidiEvent	0	0x1	B4	0x4E
+OffNoteVoiceMidiEvent	960	0x1	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x1	D5	0x55
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	sky
+OnNoteVoiceMidiEvent	0	0x1	D5	0x55
+OffNoteVoiceMidiEvent	1920	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x1	D5	0x55
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	get
+OnNoteVoiceMidiEvent	0	0x1	D5	0x53
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	by
+OnNoteVoiceMidiEvent	0	0x1	C#5	0x50
+OnNoteVoiceMidiEvent	960	0x1	C5	0x4B
+OffNoteVoiceMidiEvent	19	0x1	C#5	0x00
+OffNoteVoiceMidiEvent	892	0x1	C5	0x00
+LyricTextMetaMidiEvent	49	0x05	if
+OnNoteVoiceMidiEvent	0	0x1	C5	0x46
+OffNoteVoiceMidiEvent	960	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	you
+OnNoteVoiceMidiEvent	0	0x1	C5	0x4E
+OffNoteVoiceMidiEvent	960	0x1	C5	0x00
+LyricTextMetaMidiEvent	960	0x05	smile
+OnNoteVoiceMidiEvent	0	0x1	G5	0x4A
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	through
+OnNoteVoiceMidiEvent	0	0x1	D#5	0x4A
+OffNoteVoiceMidiEvent	960	0x1	D#5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x1	E5	0x5A
+OffNoteVoiceMidiEvent	960	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	fear
+OnNoteVoiceMidiEvent	0	0x1	F#5	0x66
+OffNoteVoiceMidiEvent	960	0x1	F#5	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x1	G5	0x6C
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	sor
+OnNoteVoiceMidiEvent	0	0x1	F5	0x55
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	row,
+OnNoteVoiceMidiEvent	0	0x1	D5	0x51
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	960	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x1	C#5	0x4A
+OffNoteVoiceMidiEvent	960	0x1	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x1	F5	0x5B
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	may
+OnNoteVoiceMidiEvent	0	0x1	F5	0x54
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x1	F5	0x52
+OffNoteVoiceMidiEvent	1440	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	to
+OnNoteVoiceMidiEvent	0	0x1	F5	0x53
+OffNoteVoiceMidiEvent	480	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	mor
+OnNoteVoiceMidiEvent	0	0x1	F5	0x54
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	row
+OnNoteVoiceMidiEvent	0	0x1	F5	0x55
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x1	E5	0x4E
+OnNoteVoiceMidiEvent	480	0x1	G5	0x51
+OffNoteVoiceMidiEvent	8	0x1	E5	0x00
+OnNoteVoiceMidiEvent	472	0x1	F5	0x4E
+OffNoteVoiceMidiEvent	8	0x1	G5	0x00
+OffNoteVoiceMidiEvent	903	0x1	F5	0x00
+LyricTextMetaMidiEvent	49	0x05	see
+OnNoteVoiceMidiEvent	0	0x1	G5	0x58
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x1	G5	0x54
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	sun
+OnNoteVoiceMidiEvent	0	0x1	F#5	0x4F
+OffNoteVoiceMidiEvent	960	0x1	F#5	0x00
+LyricTextMetaMidiEvent	0	0x05	come
+OnNoteVoiceMidiEvent	0	0x1	F5	0x50
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	shin
+OnNoteVoiceMidiEvent	0	0x1	E5	0x51
+OffNoteVoiceMidiEvent	960	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing
+OnNoteVoiceMidiEvent	0	0x1	E5	0x50
+OnNoteVoiceMidiEvent	480	0x1	D#5	0x4F
+OffNoteVoiceMidiEvent	8	0x1	E5	0x00
+OffNoteVoiceMidiEvent	446	0x1	D#5	0x00
+LyricTextMetaMidiEvent	26	0x05	through
+OnNoteVoiceMidiEvent	0	0x1	D5	0x51
+OffNoteVoiceMidiEvent	2880	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	for
+OnNoteVoiceMidiEvent	0	0x1	D5	0x55
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	you.
+OnNoteVoiceMidiEvent	0	0x1	D5	0x54
+OnNoteVoiceMidiEvent	1920	0x1	D#5	0x51
+OffNoteVoiceMidiEvent	38	0x1	D5	0x00
+OnNoteVoiceMidiEvent	922	0x1	E5	0x49
+OffNoteVoiceMidiEvent	19	0x1	D#5	0x00
+OffNoteVoiceMidiEvent	892	0x1	E5	0x00
+LyricTextMetaMidiEvent	49	0x05	Light
+OnNoteVoiceMidiEvent	0	0x1	C5	0x40
+OffNoteVoiceMidiEvent	1920	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	up
+OnNoteVoiceMidiEvent	0	0x1	E5	0x4F
+OffNoteVoiceMidiEvent	960	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x1	F5	0x55
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	face
+OnNoteVoiceMidiEvent	0	0x1	E5	0x52
+OffNoteVoiceMidiEvent	960	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	with
+OnNoteVoiceMidiEvent	0	0x1	D5	0x4B
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	glad
+OnNoteVoiceMidiEvent	0	0x1	D5	0x58
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x1	B4	0x51
+OffNoteVoiceMidiEvent	960	0x1	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	Hide
+OnNoteVoiceMidiEvent	0	0x1	C5	0x58
+OffNoteVoiceMidiEvent	1920	0x1	C5	0x00
+LyricTextMetaMidiEvent	960	0x05	ev'
+OnNoteVoiceMidiEvent	0	0x1	D5	0x49
+OffNoteVoiceMidiEvent	480	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	ry
+OnNoteVoiceMidiEvent	0	0x1	E5	0x55
+OffNoteVoiceMidiEvent	480	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	trace
+OnNoteVoiceMidiEvent	0	0x1	D5	0x52
+OffNoteVoiceMidiEvent	1440	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	of
+OnNoteVoiceMidiEvent	0	0x1	C5	0x49
+OffNoteVoiceMidiEvent	480	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	sad
+OnNoteVoiceMidiEvent	0	0x1	A#4	0x50
+OffNoteVoiceMidiEvent	960	0x1	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x1	A#4	0x50
+OffNoteVoiceMidiEvent	960	0x1	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	Al
+OnNoteVoiceMidiEvent	0	0x1	C5	0x58
+OffNoteVoiceMidiEvent	1920	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x1	C5	0x57
+OffNoteVoiceMidiEvent	960	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	a
+OnNoteVoiceMidiEvent	0	0x1	C5	0x55
+OffNoteVoiceMidiEvent	960	0x1	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	tear
+OnNoteVoiceMidiEvent	0	0x1	B4	0x51
+OffNoteVoiceMidiEvent	1920	0x1	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	may
+OnNoteVoiceMidiEvent	0	0x1	B4	0x53
+OffNoteVoiceMidiEvent	960	0x1	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x1	D5	0x5C
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	e
+OnNoteVoiceMidiEvent	0	0x1	D5	0x54
+OffNoteVoiceMidiEvent	1920	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	ver
+OnNoteVoiceMidiEvent	0	0x1	D#5	0x5B
+OffNoteVoiceMidiEvent	960	0x1	D#5	0x00
+LyricTextMetaMidiEvent	0	0x05	so
+OnNoteVoiceMidiEvent	0	0x1	D5	0x58
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	near.
+OnNoteVoiceMidiEvent	0	0x1	D#5	0x6C
+OnNoteVoiceMidiEvent	960	0x1	D5	0x5F
+OffNoteVoiceMidiEvent	19	0x1	D#5	0x00
+OffNoteVoiceMidiEvent	892	0x1	D5	0x00
+LyricTextMetaMidiEvent	49	0x05	That's
+OnNoteVoiceMidiEvent	0	0x1	E5	0x5F
+OffNoteVoiceMidiEvent	960	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x1	F#5	0x64
+OffNoteVoiceMidiEvent	960	0x1	F#5	0x00
+LyricTextMetaMidiEvent	960	0x05	time
+OnNoteVoiceMidiEvent	0	0x1	F5	0x59
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	you
+OnNoteVoiceMidiEvent	0	0x1	G5	0x66
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	must
+OnNoteVoiceMidiEvent	0	0x1	A5	0x68
+OffNoteVoiceMidiEvent	960	0x1	A5	0x00
+LyricTextMetaMidiEvent	0	0x05	keep
+OnNoteVoiceMidiEvent	0	0x1	G5	0x61
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	on
+OnNoteVoiceMidiEvent	0	0x1	F5	0x61
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	try
+OnNoteVoiceMidiEvent	0	0x1	F5	0x6D
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing,
+OnNoteVoiceMidiEvent	0	0x1	D5	0x69
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x1	F5	0x67
+OffNoteVoiceMidiEvent	1920	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	what's
+OnNoteVoiceMidiEvent	0	0x1	D#5	0x5C
+OffNoteVoiceMidiEvent	960	0x1	D#5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x1	F#5	0x6B
+OffNoteVoiceMidiEvent	960	0x1	F#5	0x00
+LyricTextMetaMidiEvent	0	0x05	use
+OnNoteVoiceMidiEvent	0	0x1	F5	0x5B
+OnNoteVoiceMidiEvent	480	0x1	F#5	0x60
+OffNoteVoiceMidiEvent	8	0x1	F5	0x00
+OffNoteVoiceMidiEvent	446	0x1	F#5	0x00
+LyricTextMetaMidiEvent	26	0x05	of
+OnNoteVoiceMidiEvent	0	0x1	G5	0x68
+OffNoteVoiceMidiEvent	960	0x1	G5	0x00
+LyricTextMetaMidiEvent	0	0x05	cry
+OnNoteVoiceMidiEvent	0	0x1	F5	0x5D
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing ?
+OnNoteVoiceMidiEvent	0	0x1	D#5	0x5E
+OffNoteVoiceMidiEvent	960	0x1	D#5	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x1	E5	0x65
+OffNoteVoiceMidiEvent	1920	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	find
+OnNoteVoiceMidiEvent	0	0x1	F5	0x69
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	that
+OnNoteVoiceMidiEvent	0	0x1	F5	0x61
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	life
+OnNoteVoiceMidiEvent	0	0x1	F#5	0x65
+OffNoteVoiceMidiEvent	960	0x1	F#5	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x1	F5	0x59
+OffNoteVoiceMidiEvent	960	0x1	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	still
+OnNoteVoiceMidiEvent	0	0x1	E5	0x5E
+OffNoteVoiceMidiEvent	960	0x1	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	worth
+OnNoteVoiceMidiEvent	0	0x1	D5	0x5B
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	while
+OnNoteVoiceMidiEvent	0	0x1	D5	0x5F
+OffNoteVoiceMidiEvent	2880	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	If
+OnNoteVoiceMidiEvent	0	0x1	D5	0x66
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x1	D5	0x63
+OffNoteVoiceMidiEvent	1920	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	just
+OnNoteVoiceMidiEvent	0	0x1	D#5	0x69
+OnNoteVoiceMidiEvent	960	0x1	E5	0x6E
+OffNoteVoiceMidiEvent	19	0x1	D#5	0x00
+OffNoteVoiceMidiEvent	892	0x1	E5	0x00
+LyricTextMetaMidiEvent	49	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x1	D5	0x58
+OnNoteVoiceMidiEvent	3840	0x1	C#5	0x69
+OffNoteVoiceMidiEvent	75	0x1	D5	0x00
+OffNoteVoiceMidiEvent	3570	0x1	C#5	0x00
+LyricTextMetaMidiEvent	195	0x05	Smile,
+OnNoteVoiceMidiEvent	0	0x1	C5	0x57
+OnNoteVoiceMidiEvent	3840	0x1	B4	0x56
+OffNoteVoiceMidiEvent	75	0x1	C5	0x00
+OffNoteVoiceMidiEvent	3570	0x1	B4	0x00
+LyricTextMetaMidiEvent	195	0x05	Oo
+OnNoteVoiceMidiEvent	0	0x1	A#4	0x43
+OnNoteVoiceMidiEvent	960	0x1	C5	0x4B
+OffNoteVoiceMidiEvent	19	0x1	A#4	0x00
+OnNoteVoiceMidiEvent	941	0x1	D5	0x4F
+OffNoteVoiceMidiEvent	19	0x1	C5	0x00
+OffNoteVoiceMidiEvent	892	0x1	D5	0x00
+LyricTextMetaMidiEvent	49	0x05	if
+OnNoteVoiceMidiEvent	0	0x1	D5	0x4E
+OffNoteVoiceMidiEvent	960	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x1	D5	0x57
+OffNoteVoiceMidiEvent	1920	0x1	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	just,
+OnNoteVoiceMidiEvent	0	0x1	C#5	0x4F
+OffNoteVoiceMidiEvent	1920	0x1	C#5	0x00
+LyricTextMetaMidiEvent	1920	0x05	just
+LyricTextMetaMidiEvent	0	0x05	smile.
+OnNoteVoiceMidiEvent	0	0x1	A#4	0x4A
+OffNoteVoiceMidiEvent	1920	0x1	A#4	0x00
+OnNoteVoiceMidiEvent	0	0x1	A4	0x40
+OffNoteVoiceMidiEvent	5760	0x1	A4	0x00
+EndOfTrackMetaMidiEvent	1	0x2F
+ProgramChangeVoiceMidiEvent	0	0x2	AcousticGrand
+ControllerVoiceMidiEvent	0	0x2	AllControllersOff	0x00
+ControllerVoiceMidiEvent	0	0x2	HoldPedalOnOff	0x00
+ControllerVoiceMidiEvent	0	0x2	EffectsLevel	0x30
+ControllerVoiceMidiEvent	0	0x2	PanPositionCourse	0x5A
+ControllerVoiceMidiEvent	0	0x2	VolumeCourse	0x64
+SequenceTrackNameTextMetaMidiEvent	0	0x03	Tenor
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x2	F4	0x3F
+OffNoteVoiceMidiEvent	1920	0x2	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x2	G4	0x51
+OffNoteVoiceMidiEvent	960	0x2	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x2	A4	0x47
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	heart
+OnNoteVoiceMidiEvent	0	0x2	G4	0x3E
+OffNoteVoiceMidiEvent	960	0x2	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x2	F4	0x48
+OffNoteVoiceMidiEvent	960	0x2	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	ach
+OnNoteVoiceMidiEvent	0	0x2	E4	0x43
+OffNoteVoiceMidiEvent	960	0x2	E4	0x00
+LyricTextMetaMidiEvent	0	0x05	ing,
+OnNoteVoiceMidiEvent	0	0x2	D4	0x4B
+OffNoteVoiceMidiEvent	960	0x2	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x2	E4	0x4F
+OffNoteVoiceMidiEvent	1920	0x2	E4	0x00
+LyricTextMetaMidiEvent	960	0x05	e
+OnNoteVoiceMidiEvent	0	0x2	F4	0x43
+OffNoteVoiceMidiEvent	480	0x2	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	ven
+OnNoteVoiceMidiEvent	0	0x2	G4	0x47
+OffNoteVoiceMidiEvent	480	0x2	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x2	F4	0x44
+OffNoteVoiceMidiEvent	1440	0x2	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	it's
+OnNoteVoiceMidiEvent	0	0x2	G4	0x48
+OffNoteVoiceMidiEvent	480	0x2	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	brea
+OnNoteVoiceMidiEvent	0	0x2	A4	0x46
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	king.
+OnNoteVoiceMidiEvent	0	0x2	G#4	0x44
+OffNoteVoiceMidiEvent	960	0x2	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	When
+OnNoteVoiceMidiEvent	0	0x2	A4	0x4F
+OffNoteVoiceMidiEvent	1920	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	there
+OnNoteVoiceMidiEvent	0	0x2	A4	0x49
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	are
+OnNoteVoiceMidiEvent	0	0x2	A4	0x4E
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	clouds
+OnNoteVoiceMidiEvent	0	0x2	G#4	0x47
+OffNoteVoiceMidiEvent	1920	0x2	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	in
+OnNoteVoiceMidiEvent	0	0x2	G#4	0x47
+OffNoteVoiceMidiEvent	960	0x2	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x2	B4	0x55
+OffNoteVoiceMidiEvent	960	0x2	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	sky
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x52
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x52
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	get
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x56
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	by
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x53
+OnNoteVoiceMidiEvent	960	0x2	F#4	0x4E
+OffNoteVoiceMidiEvent	19	0x2	A#4	0x00
+OffNoteVoiceMidiEvent	892	0x2	F#4	0x00
+LyricTextMetaMidiEvent	49	0x05	if
+OnNoteVoiceMidiEvent	0	0x2	G4	0x47
+OffNoteVoiceMidiEvent	960	0x2	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	you
+OnNoteVoiceMidiEvent	0	0x2	F#4	0x4B
+OffNoteVoiceMidiEvent	960	0x2	F#4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x5E
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	through
+OnNoteVoiceMidiEvent	0	0x2	C5	0x59
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x2	D5	0x5D
+OffNoteVoiceMidiEvent	960	0x2	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	fear
+OnNoteVoiceMidiEvent	0	0x2	C5	0x5A
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x5E
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	sor
+OnNoteVoiceMidiEvent	0	0x2	C5	0x65
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	row,
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x5A
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x51
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x2	C5	0x5B
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	may
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x5A
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x2	C5	0x52
+OffNoteVoiceMidiEvent	1440	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	to
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x55
+OffNoteVoiceMidiEvent	480	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	mor
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x58
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	row
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x52
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x55
+OnNoteVoiceMidiEvent	960	0x2	C5	0x4E
+OffNoteVoiceMidiEvent	19	0x2	C#5	0x00
+OffNoteVoiceMidiEvent	892	0x2	C5	0x00
+LyricTextMetaMidiEvent	49	0x05	see
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x57
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x55
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	sun
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x54
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	come
+OnNoteVoiceMidiEvent	0	0x2	C5	0x53
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	shin
+OnNoteVoiceMidiEvent	0	0x2	B4	0x4D
+OffNoteVoiceMidiEvent	960	0x2	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	ing
+OnNoteVoiceMidiEvent	0	0x2	B4	0x57
+OffNoteVoiceMidiEvent	960	0x2	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	through
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x4E
+OffNoteVoiceMidiEvent	2880	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	for
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x51
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	you.
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x56
+OffNoteVoiceMidiEvent	3840	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	Light
+OnNoteVoiceMidiEvent	0	0x2	G4	0x3F
+OffNoteVoiceMidiEvent	1920	0x2	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	up
+OnNoteVoiceMidiEvent	0	0x2	C5	0x56
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x2	D5	0x56
+OffNoteVoiceMidiEvent	960	0x2	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	face
+OnNoteVoiceMidiEvent	0	0x2	D5	0x54
+OffNoteVoiceMidiEvent	960	0x2	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	with
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x4B
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	glad
+OnNoteVoiceMidiEvent	0	0x2	A4	0x55
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x2	G#4	0x52
+OffNoteVoiceMidiEvent	960	0x2	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	Hide
+OnNoteVoiceMidiEvent	0	0x2	A4	0x53
+OffNoteVoiceMidiEvent	1920	0x2	A4	0x00
+LyricTextMetaMidiEvent	960	0x05	ev'
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x4B
+OffNoteVoiceMidiEvent	480	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	ry
+OnNoteVoiceMidiEvent	0	0x2	C5	0x59
+OffNoteVoiceMidiEvent	480	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	trace
+OnNoteVoiceMidiEvent	0	0x2	A4	0x4C
+OffNoteVoiceMidiEvent	1440	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	of
+OnNoteVoiceMidiEvent	0	0x2	G4	0x4F
+OffNoteVoiceMidiEvent	480	0x2	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	sad
+OnNoteVoiceMidiEvent	0	0x2	F4	0x50
+OffNoteVoiceMidiEvent	960	0x2	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x2	G#4	0x57
+OffNoteVoiceMidiEvent	960	0x2	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	Al
+OnNoteVoiceMidiEvent	0	0x2	A4	0x54
+OffNoteVoiceMidiEvent	1920	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x2	A4	0x53
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	a
+OnNoteVoiceMidiEvent	0	0x2	A4	0x55
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	tear
+OnNoteVoiceMidiEvent	0	0x2	G#4	0x54
+OffNoteVoiceMidiEvent	1920	0x2	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	may
+OnNoteVoiceMidiEvent	0	0x2	G#4	0x51
+OffNoteVoiceMidiEvent	960	0x2	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x2	B4	0x54
+OffNoteVoiceMidiEvent	960	0x2	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	e
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x4F
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	ver
+OnNoteVoiceMidiEvent	0	0x2	C5	0x60
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	so
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x5F
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	near.
+OnNoteVoiceMidiEvent	0	0x2	C5	0x69
+OffNoteVoiceMidiEvent	1920	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	That's
+OnNoteVoiceMidiEvent	0	0x2	C5	0x54
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x2	C5	0x58
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	960	0x05	time
+OnNoteVoiceMidiEvent	0	0x2	D5	0x55
+OffNoteVoiceMidiEvent	960	0x2	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	you
+OnNoteVoiceMidiEvent	0	0x2	E5	0x67
+OffNoteVoiceMidiEvent	960	0x2	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	must
+OnNoteVoiceMidiEvent	0	0x2	F5	0x6A
+OffNoteVoiceMidiEvent	960	0x2	F5	0x00
+LyricTextMetaMidiEvent	0	0x05	keep
+OnNoteVoiceMidiEvent	0	0x2	E5	0x66
+OffNoteVoiceMidiEvent	960	0x2	E5	0x00
+LyricTextMetaMidiEvent	0	0x05	on
+OnNoteVoiceMidiEvent	0	0x2	D5	0x63
+OffNoteVoiceMidiEvent	960	0x2	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	try
+OnNoteVoiceMidiEvent	0	0x2	C5	0x67
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing,
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x6D
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x68
+OffNoteVoiceMidiEvent	1920	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	what's
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x66
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x2	D5	0x66
+OffNoteVoiceMidiEvent	960	0x2	D5	0x00
+LyricTextMetaMidiEvent	0	0x05	use
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x5B
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	of
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x64
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	cry
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x5F
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	ing ?
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x5E
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x65
+OnNoteVoiceMidiEvent	960	0x2	C5	0x5F
+OffNoteVoiceMidiEvent	19	0x2	C#5	0x00
+OffNoteVoiceMidiEvent	892	0x2	C5	0x00
+LyricTextMetaMidiEvent	49	0x05	find
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x60
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	that
+OnNoteVoiceMidiEvent	0	0x2	C#5	0x61
+OffNoteVoiceMidiEvent	960	0x2	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	life
+OnNoteVoiceMidiEvent	0	0x2	C5	0x5C
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x2	C5	0x63
+OffNoteVoiceMidiEvent	960	0x2	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	still
+OnNoteVoiceMidiEvent	0	0x2	B4	0x62
+OffNoteVoiceMidiEvent	960	0x2	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	worth
+OnNoteVoiceMidiEvent	0	0x2	B4	0x5E
+OffNoteVoiceMidiEvent	960	0x2	B4	0x00
+LyricTextMetaMidiEvent	0	0x05	while
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x5E
+OffNoteVoiceMidiEvent	2880	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	If
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x62
+OffNoteVoiceMidiEvent	960	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x61
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	just
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x61
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x2	A4	0x62
+OnNoteVoiceMidiEvent	3840	0x2	G#4	0x6E
+OffNoteVoiceMidiEvent	75	0x2	A4	0x00
+OffNoteVoiceMidiEvent	3570	0x2	G#4	0x00
+LyricTextMetaMidiEvent	195	0x05	Smile,
+OnNoteVoiceMidiEvent	0	0x2	G4	0x60
+OnNoteVoiceMidiEvent	3840	0x2	F4	0x59
+OffNoteVoiceMidiEvent	75	0x2	G4	0x00
+OffNoteVoiceMidiEvent	3570	0x2	F4	0x00
+LyricTextMetaMidiEvent	195	0x05	Oo
+OnNoteVoiceMidiEvent	0	0x2	F4	0x44
+OnNoteVoiceMidiEvent	960	0x2	G4	0x48
+OffNoteVoiceMidiEvent	19	0x2	F4	0x00
+OnNoteVoiceMidiEvent	941	0x2	A4	0x4D
+OffNoteVoiceMidiEvent	19	0x2	G4	0x00
+OffNoteVoiceMidiEvent	892	0x2	A4	0x00
+LyricTextMetaMidiEvent	49	0x05	if
+OnNoteVoiceMidiEvent	0	0x2	A4	0x51
+OffNoteVoiceMidiEvent	960	0x2	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x51
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	just
+OnNoteVoiceMidiEvent	0	0x2	A#4	0x55
+OffNoteVoiceMidiEvent	1920	0x2	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile.
+OnNoteVoiceMidiEvent	0	0x2	F4	0x4D
+OffNoteVoiceMidiEvent	9600	0x2	F4	0x00
+EndOfTrackMetaMidiEvent	1	0x2F
+ProgramChangeVoiceMidiEvent	0	0x3	AcousticGrand
+ControllerVoiceMidiEvent	0	0x3	AllControllersOff	0x00
+ControllerVoiceMidiEvent	0	0x3	HoldPedalOnOff	0x00
+ControllerVoiceMidiEvent	0	0x3	EffectsLevel	0x30
+ControllerVoiceMidiEvent	0	0x3	PanPositionCourse	0x7F
+ControllerVoiceMidiEvent	0	0x3	VolumeCourse	0x64
+SequenceTrackNameTextMetaMidiEvent	0	0x03	Basse
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x3	F4	0x40
+OffNoteVoiceMidiEvent	1920	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x3	G4	0x4D
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x3	A4	0x48
+OffNoteVoiceMidiEvent	960	0x3	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	heart
+OnNoteVoiceMidiEvent	0	0x3	G4	0x42
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x3	F4	0x44
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	ach
+OnNoteVoiceMidiEvent	0	0x3	E4	0x44
+OffNoteVoiceMidiEvent	960	0x3	E4	0x00
+LyricTextMetaMidiEvent	0	0x05	ing,
+OnNoteVoiceMidiEvent	0	0x3	D4	0x47
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x3	E4	0x49
+OffNoteVoiceMidiEvent	1920	0x3	E4	0x00
+LyricTextMetaMidiEvent	960	0x05	e
+OnNoteVoiceMidiEvent	0	0x3	F4	0x41
+OffNoteVoiceMidiEvent	480	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	ven
+OnNoteVoiceMidiEvent	0	0x3	G4	0x46
+OffNoteVoiceMidiEvent	480	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x3	F4	0x43
+OffNoteVoiceMidiEvent	1440	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	it's
+OnNoteVoiceMidiEvent	0	0x3	G4	0x48
+OffNoteVoiceMidiEvent	480	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	brea
+OnNoteVoiceMidiEvent	0	0x3	A4	0x48
+OffNoteVoiceMidiEvent	960	0x3	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	king.
+OnNoteVoiceMidiEvent	0	0x3	G#4	0x45
+OffNoteVoiceMidiEvent	960	0x3	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	When
+OnNoteVoiceMidiEvent	0	0x3	A4	0x48
+OffNoteVoiceMidiEvent	1920	0x3	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	there
+OnNoteVoiceMidiEvent	0	0x3	G4	0x46
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	are
+LyricTextMetaMidiEvent	0	0x05	clouds
+OnNoteVoiceMidiEvent	0	0x3	F4	0x4B
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+OnNoteVoiceMidiEvent	0	0x3	G4	0x48
+OnNoteVoiceMidiEvent	960	0x3	F4	0x4A
+OffNoteVoiceMidiEvent	19	0x3	G4	0x00
+OffNoteVoiceMidiEvent	892	0x3	F4	0x00
+LyricTextMetaMidiEvent	49	0x05	in
+OnNoteVoiceMidiEvent	0	0x3	F4	0x4A
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x3	G#4	0x56
+OffNoteVoiceMidiEvent	960	0x3	G#4	0x00
+LyricTextMetaMidiEvent	0	0x05	sky
+OnNoteVoiceMidiEvent	0	0x3	A4	0x53
+OnNoteVoiceMidiEvent	960	0x3	G4	0x4D
+OffNoteVoiceMidiEvent	19	0x3	A4	0x00
+OffNoteVoiceMidiEvent	892	0x3	G4	0x00
+LyricTextMetaMidiEvent	49	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x3	F#4	0x55
+OffNoteVoiceMidiEvent	960	0x3	F#4	0x00
+LyricTextMetaMidiEvent	0	0x05	get
+OnNoteVoiceMidiEvent	0	0x3	F4	0x54
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	by
+OnNoteVoiceMidiEvent	0	0x3	D#4	0x4D
+OnNoteVoiceMidiEvent	960	0x3	G#3	0x44
+OffNoteVoiceMidiEvent	19	0x3	D#4	0x00
+OffNoteVoiceMidiEvent	892	0x3	G#3	0x00
+LyricTextMetaMidiEvent	49	0x05	if
+OnNoteVoiceMidiEvent	0	0x3	A3	0x4C
+OffNoteVoiceMidiEvent	960	0x3	A3	0x00
+LyricTextMetaMidiEvent	0	0x05	you
+OnNoteVoiceMidiEvent	0	0x3	D4	0x51
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile
+OnNoteVoiceMidiEvent	0	0x3	G4	0x5A
+OffNoteVoiceMidiEvent	1920	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	through
+OnNoteVoiceMidiEvent	0	0x3	A4	0x58
+OffNoteVoiceMidiEvent	960	0x3	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x3	A#4	0x5D
+OffNoteVoiceMidiEvent	960	0x3	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	fear
+OnNoteVoiceMidiEvent	0	0x3	A4	0x62
+OffNoteVoiceMidiEvent	960	0x3	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x3	G4	0x5B
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	sor
+OnNoteVoiceMidiEvent	0	0x3	D4	0x5B
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	row,
+OnNoteVoiceMidiEvent	0	0x3	G4	0x61
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	Smile
+OnNoteVoiceMidiEvent	0	0x3	A#4	0x56
+OffNoteVoiceMidiEvent	1920	0x3	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	and
+OnNoteVoiceMidiEvent	0	0x3	C5	0x61
+OffNoteVoiceMidiEvent	960	0x3	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	may
+OnNoteVoiceMidiEvent	0	0x3	C#5	0x5C
+OffNoteVoiceMidiEvent	960	0x3	C#5	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x3	C5	0x4F
+OffNoteVoiceMidiEvent	1440	0x3	C5	0x00
+LyricTextMetaMidiEvent	0	0x05	to
+OnNoteVoiceMidiEvent	0	0x3	A#4	0x52
+OffNoteVoiceMidiEvent	480	0x3	A#4	0x00
+LyricTextMetaMidiEvent	0	0x05	mor
+OnNoteVoiceMidiEvent	0	0x3	A4	0x53
+OffNoteVoiceMidiEvent	960	0x3	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	row
+OnNoteVoiceMidiEvent	0	0x3	G4	0x51
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x3	F4	0x54
+OffNoteVoiceMidiEvent	1920	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	see
+OnNoteVoiceMidiEvent	0	0x3	E4	0x52
+OffNoteVoiceMidiEvent	960	0x3	E4	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x3	D#4	0x52
+OffNoteVoiceMidiEvent	960	0x3	D#4	0x00
+LyricTextMetaMidiEvent	0	0x05	sun
+OnNoteVoiceMidiEvent	0	0x3	D4	0x50
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	come
+OnNoteVoiceMidiEvent	0	0x3	D4	0x51
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	shin
+OnNoteVoiceMidiEvent	0	0x3	F4	0x57
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	ing
+OnNoteVoiceMidiEvent	0	0x3	F4	0x56
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	sun
+OnNoteVoiceMidiEvent	0	0x3	A4	0x58
+LyricTextMetaMidiEvent	960	0x05	will
+OnNoteVoiceMidiEvent	0	0x3	G4	0x59
+OffNoteVoiceMidiEvent	19	0x3	A4	0x00
+LyricTextMetaMidiEvent	941	0x05	shine
+OnNoteVoiceMidiEvent	0	0x3	F#4	0x56
+OffNoteVoiceMidiEvent	19	0x3	G4	0x00
+OffNoteVoiceMidiEvent	892	0x3	F#4	0x00
+LyricTextMetaMidiEvent	49	0x05	for
+OnNoteVoiceMidiEvent	0	0x3	F4	0x51
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	you.
+OnNoteVoiceMidiEvent	0	0x3	F4	0x52
+OnNoteVoiceMidiEvent	1920	0x3	C4	0x4C
+OffNoteVoiceMidiEvent	38	0x3	F4	0x00
+OffNoteVoiceMidiEvent	1785	0x3	C4	0x00
+LyricTextMetaMidiEvent	97	0x05	Light
+OnNoteVoiceMidiEvent	0	0x3	A3	0x45
+OffNoteVoiceMidiEvent	1920	0x3	A3	0x00
+LyricTextMetaMidiEvent	0	0x05	up
+OnNoteVoiceMidiEvent	0	0x3	D4	0x4F
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	your
+OnNoteVoiceMidiEvent	0	0x3	G4	0x55
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	face
+OnNoteVoiceMidiEvent	0	0x3	C4	0x4F
+OffNoteVoiceMidiEvent	960	0x3	C4	0x00
+LyricTextMetaMidiEvent	0	0x05	with
+OnNoteVoiceMidiEvent	0	0x3	C4	0x54
+OffNoteVoiceMidiEvent	960	0x3	C4	0x00
+LyricTextMetaMidiEvent	0	0x05	glad
+OnNoteVoiceMidiEvent	0	0x3	B3	0x54
+OffNoteVoiceMidiEvent	960	0x3	B3	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x3	E4	0x5A
+OffNoteVoiceMidiEvent	960	0x3	E4	0x00
+LyricTextMetaMidiEvent	0	0x05	Hide
+OnNoteVoiceMidiEvent	0	0x3	F4	0x56
+OffNoteVoiceMidiEvent	1920	0x3	F4	0x00
+LyricTextMetaMidiEvent	960	0x05	ev'
+OnNoteVoiceMidiEvent	0	0x3	F4	0x4C
+OffNoteVoiceMidiEvent	480	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	ry
+OnNoteVoiceMidiEvent	0	0x3	F4	0x54
+OffNoteVoiceMidiEvent	480	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	trace
+OnNoteVoiceMidiEvent	0	0x3	A#3	0x4C
+OffNoteVoiceMidiEvent	1440	0x3	A#3	0x00
+LyricTextMetaMidiEvent	0	0x05	of
+OnNoteVoiceMidiEvent	0	0x3	A#3	0x4F
+OffNoteVoiceMidiEvent	480	0x3	A#3	0x00
+LyricTextMetaMidiEvent	0	0x05	sad
+OnNoteVoiceMidiEvent	0	0x3	A#3	0x4F
+OffNoteVoiceMidiEvent	960	0x3	A#3	0x00
+LyricTextMetaMidiEvent	0	0x05	ness,
+OnNoteVoiceMidiEvent	0	0x3	E4	0x5D
+OffNoteVoiceMidiEvent	960	0x3	E4	0x00
+LyricTextMetaMidiEvent	0	0x05	Al
+OnNoteVoiceMidiEvent	0	0x3	G4	0x53
+OnNoteVoiceMidiEvent	960	0x3	F4	0x4F
+OffNoteVoiceMidiEvent	19	0x3	G4	0x00
+OffNoteVoiceMidiEvent	892	0x3	F4	0x00
+LyricTextMetaMidiEvent	49	0x05	tho'
+OnNoteVoiceMidiEvent	0	0x3	G4	0x58
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	a
+OnNoteVoiceMidiEvent	0	0x3	F4	0x53
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	tear
+OnNoteVoiceMidiEvent	0	0x3	G4	0x59
+OnNoteVoiceMidiEvent	960	0x3	F4	0x55
+OffNoteVoiceMidiEvent	19	0x3	G4	0x00
+OffNoteVoiceMidiEvent	892	0x3	F4	0x00
+LyricTextMetaMidiEvent	49	0x05	may
+OnNoteVoiceMidiEvent	0	0x3	F4	0x55
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	be
+OnNoteVoiceMidiEvent	0	0x3	G#4	0x55
+OnNoteVoiceMidiEvent	480	0x3	A#4	0x58
+OffNoteVoiceMidiEvent	8	0x3	G#4	0x00
+OffNoteVoiceMidiEvent	446	0x3	A#4	0x00
+LyricTextMetaMidiEvent	26	0x05	e
+OnNoteVoiceMidiEvent	0	0x3	A4	0x53
+OnNoteVoiceMidiEvent	960	0x3	G4	0x54
+OffNoteVoiceMidiEvent	19	0x3	A4	0x00
+OffNoteVoiceMidiEvent	892	0x3	G4	0x00
+LyricTextMetaMidiEvent	49	0x05	ver
+OnNoteVoiceMidiEvent	0	0x3	F#4	0x59
+OffNoteVoiceMidiEvent	960	0x3	F#4	0x00
+LyricTextMetaMidiEvent	0	0x05	so
+OnNoteVoiceMidiEvent	0	0x3	G4	0x5A
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	near.
+OnNoteVoiceMidiEvent	0	0x3	D4	0x5A
+OffNoteVoiceMidiEvent	1920	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	That's
+OnNoteVoiceMidiEvent	0	0x3	D4	0x52
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x3	D4	0x5B
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	time,
+OnNoteVoiceMidiEvent	0	0x3	G4	0x68
+LyricTextMetaMidiEvent	3840	0x05	Smile
+OffNoteVoiceMidiEvent	3840	0x3	G4	0x00
+OnNoteVoiceMidiEvent	0	0x3	G#4	0x62
+OnNoteVoiceMidiEvent	960	0x3	G4	0x62
+OffNoteVoiceMidiEvent	19	0x3	G#4	0x00
+OffNoteVoiceMidiEvent	892	0x3	G4	0x00
+LyricTextMetaMidiEvent	49	0x05	what's
+OnNoteVoiceMidiEvent	0	0x3	F4	0x61
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	the
+OnNoteVoiceMidiEvent	0	0x3	E4	0x61
+OffNoteVoiceMidiEvent	960	0x3	E4	0x00
+LyricTextMetaMidiEvent	0	0x05	use
+OnNoteVoiceMidiEvent	0	0x3	D#4	0x64
+OffNoteVoiceMidiEvent	960	0x3	D#4	0x00
+LyricTextMetaMidiEvent	0	0x05	of
+OnNoteVoiceMidiEvent	0	0x3	D#4	0x62
+OffNoteVoiceMidiEvent	960	0x3	D#4	0x00
+LyricTextMetaMidiEvent	0	0x05	cry
+OnNoteVoiceMidiEvent	0	0x3	D#4	0x64
+OffNoteVoiceMidiEvent	960	0x3	D#4	0x00
+LyricTextMetaMidiEvent	0	0x05	ing ?
+OnNoteVoiceMidiEvent	0	0x3	E4	0x5F
+OffNoteVoiceMidiEvent	960	0x3	E4	0x00
+LyricTextMetaMidiEvent	0	0x05	You'll
+OnNoteVoiceMidiEvent	0	0x3	F4	0x61
+OffNoteVoiceMidiEvent	1920	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	find
+OnNoteVoiceMidiEvent	0	0x3	D#4	0x60
+OffNoteVoiceMidiEvent	960	0x3	D#4	0x00
+LyricTextMetaMidiEvent	0	0x05	that
+OnNoteVoiceMidiEvent	0	0x3	D#4	0x62
+OffNoteVoiceMidiEvent	960	0x3	D#4	0x00
+LyricTextMetaMidiEvent	0	0x05	life
+OnNoteVoiceMidiEvent	0	0x3	D4	0x5C
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	is
+OnNoteVoiceMidiEvent	0	0x3	D4	0x61
+OffNoteVoiceMidiEvent	960	0x3	D4	0x00
+LyricTextMetaMidiEvent	0	0x05	still
+OnNoteVoiceMidiEvent	0	0x3	F4	0x66
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	worth,
+OnNoteVoiceMidiEvent	0	0x3	F4	0x61
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	still
+OnNoteVoiceMidiEvent	0	0x3	A4	0x68
+OffNoteVoiceMidiEvent	960	0x3	A4	0x00
+LyricTextMetaMidiEvent	0	0x05	worth
+OnNoteVoiceMidiEvent	0	0x3	G4	0x5F
+OffNoteVoiceMidiEvent	960	0x3	G4	0x00
+LyricTextMetaMidiEvent	0	0x05	while
+OnNoteVoiceMidiEvent	0	0x3	F#4	0x62
+OffNoteVoiceMidiEvent	960	0x3	F#4	0x00
+LyricTextMetaMidiEvent	0	0x05	If
+OnNoteVoiceMidiEvent	0	0x3	F4	0x63
+OffNoteVoiceMidiEvent	960	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x3	F4	0x62
+OffNoteVoiceMidiEvent	1920	0x3	F4	0x00
+LyricTextMetaMidiEvent	0	0x05	just
+OnNoteVoiceMidiEvent	0	0x3	C4	0x5F
+OffNoteVoiceMidiEvent	1920	0x3	C4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile,
+OnNoteVoiceMidiEvent	0	0x3	B3	0x5F
+OnNoteVoiceMidiEvent	3840	0x3	A#3	0x6D
+OffNoteVoiceMidiEvent	75	0x3	B3	0x00
+OffNoteVoiceMidiEvent	3570	0x3	A#3	0x00
+LyricTextMetaMidiEvent	195	0x05	Smile,
+OnNoteVoiceMidiEvent	0	0x3	A3	0x61
+OnNoteVoiceMidiEvent	3840	0x3	G#3	0x5E
+OffNoteVoiceMidiEvent	75	0x3	A3	0x00
+OffNoteVoiceMidiEvent	3570	0x3	G#3	0x00
+LyricTextMetaMidiEvent	195	0x05	Oo
+OnNoteVoiceMidiEvent	0	0x3	G3	0x46
+OnNoteVoiceMidiEvent	960	0x3	A3	0x44
+OffNoteVoiceMidiEvent	19	0x3	G3	0x00
+OnNoteVoiceMidiEvent	941	0x3	A#3	0x4B
+OffNoteVoiceMidiEvent	19	0x3	A3	0x00
+OffNoteVoiceMidiEvent	892	0x3	A#3	0x00
+LyricTextMetaMidiEvent	49	0x05	if
+OnNoteVoiceMidiEvent	0	0x3	B3	0x52
+OffNoteVoiceMidiEvent	960	0x3	B3	0x00
+LyricTextMetaMidiEvent	0	0x05	you'll
+OnNoteVoiceMidiEvent	0	0x3	C4	0x58
+OffNoteVoiceMidiEvent	1920	0x3	C4	0x00
+LyricTextMetaMidiEvent	0	0x05	just,
+OnNoteVoiceMidiEvent	0	0x3	C4	0x53
+OffNoteVoiceMidiEvent	1920	0x3	C4	0x00
+LyricTextMetaMidiEvent	1920	0x05	just
+OnNoteVoiceMidiEvent	0	0x3	F#3	0x48
+OnNoteVoiceMidiEvent	0	0x3	C#4	0x48
+OffNoteVoiceMidiEvent	1920	0x3	F#3	0x00
+OffNoteVoiceMidiEvent	0	0x3	C#4	0x00
+LyricTextMetaMidiEvent	0	0x05	smile.
+OnNoteVoiceMidiEvent	0	0x3	F3	0x45
+OnNoteVoiceMidiEvent	0	0x3	C4	0x45
+OffNoteVoiceMidiEvent	5760	0x3	F3	0x00
+OffNoteVoiceMidiEvent	0	0x3	C4	0x00
+EndOfTrackMetaMidiEvent	1	0x2F
